@@ -1,4 +1,4 @@
-package com.honcharenko.dao.impl;
+package com.honcharenko.dao.mysql;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Point;
@@ -14,8 +14,8 @@ public class PointDaoImpl implements DAO<Point> {
         return null;
     }
 
-    public boolean add(Point point) {
-        return false;
+    public Point add(Point point) {
+        return null;
     }
 
     public boolean remove(Point point) {
@@ -27,6 +27,11 @@ public class PointDaoImpl implements DAO<Point> {
     }
 
     public Point update(Point point) {
+        return null;
+    }
+
+    @Override
+    public Point getById(int id) {
         return null;
     }
 }

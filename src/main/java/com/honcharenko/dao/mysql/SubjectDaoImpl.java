@@ -1,4 +1,4 @@
-package com.honcharenko.dao.impl;
+package com.honcharenko.dao.mysql;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Subject;
@@ -14,8 +14,8 @@ public class SubjectDaoImpl implements DAO<Subject> {
         return null;
     }
 
-    public boolean add(Subject subject) {
-        return false;
+    public Subject add(Subject subject) {
+        return subject;
     }
 
     public boolean remove(Subject subject) {
@@ -27,6 +27,11 @@ public class SubjectDaoImpl implements DAO<Subject> {
     }
 
     public Subject update(Subject subject) {
+        return null;
+    }
+
+    @Override
+    public Subject getById(int id) {
         return null;
     }
 }

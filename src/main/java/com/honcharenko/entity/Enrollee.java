@@ -1,16 +1,29 @@
 package com.honcharenko.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Enrollee {
+    private int id;
     private String firstName;
     private String lastName;
     private String city;
-    private int age;
     private String login;
     private String password;
-    private List<String> emails;
+    private String email;
     private List<Point> points;
+
+    public Enrollee() {
+        points = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -36,14 +49,6 @@ public class Enrollee {
         this.city = city;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -60,19 +65,37 @@ public class Enrollee {
         this.password = password;
     }
 
-    public List<String> getEmails() {
-        return emails;
+    public String getEmail() {
+        return email;
     }
 
-    public void addEmail(String email) {
-        this.emails.add(email);
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public List<Point> getPoints() {
         return points;
     }
 
-    public void addPoint(Point point) {
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
+
+    public void addPoints(Point point) {
         this.points.add(point);
+    }
+
+    @Override
+    public String toString() {
+        return "Enrollee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", city='" + city + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", points=" + points +
+                '}';
     }
 }

@@ -6,13 +6,14 @@ public class SubjectBuilder {
     private Subject subject;
 
     public SubjectBuilder() {
+        subject = new Subject();
     }
     
     public SubjectBuilder setId(int id) {
         subject.setId(id);
         return this;
     }
-    
+
     public SubjectBuilder setShortName(String shortName) {
         subject.setShortName(shortName);
         return this;

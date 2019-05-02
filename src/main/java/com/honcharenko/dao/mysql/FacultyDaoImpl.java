@@ -1,4 +1,4 @@
-package com.honcharenko.dao.impl;
+package com.honcharenko.dao.mysql;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Faculty;
@@ -14,8 +14,8 @@ public class FacultyDaoImpl implements DAO<Faculty> {
         return null;
     }
 
-    public boolean add(Faculty faculty) {
-        return false;
+    public Faculty add(Faculty faculty) {
+        return null;
     }
 
     public boolean remove(Faculty faculty) {
@@ -27,6 +27,11 @@ public class FacultyDaoImpl implements DAO<Faculty> {
     }
 
     public Faculty update(Faculty faculty) {
+        return null;
+    }
+
+    @Override
+    public Faculty getById(int id) {
         return null;
     }
 }

@@ -7,11 +7,13 @@ public interface DAO<E> {
 
     E getByProperty(String propertyName, String propertyValue);
 
-    boolean add(E e);
+    E add(E e);
 
     boolean remove(E e);
 
     E removeById(int id);
 
     E update(E e);
+
+    E getById(int id);
 }

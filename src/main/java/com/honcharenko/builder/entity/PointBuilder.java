@@ -8,6 +8,7 @@ public class PointBuilder {
     private Point point;
 
     public PointBuilder() {
+        point = new Point();
     }
 
     public PointBuilder setEnrollee(Enrollee enrolle) {
@@ -17,6 +18,16 @@ public class PointBuilder {
     
     public PointBuilder setSubject(Subject subject) {
         point.setSubject(subject);
+        return this;
+    }
+
+    public PointBuilder setPoint(double point) {
+        this.point.setPoint(point);
+        return this;
+    }
+
+    public PointBuilder setId(int id) {
+        point.setId(id);
         return this;
     }
 

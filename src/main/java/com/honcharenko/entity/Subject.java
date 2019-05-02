@@ -28,4 +28,13 @@ public class Subject {
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", shortName='" + shortName + '\'' +
+                ", fullName='" + fullName + '\'' +
+                '}';
+    }
 }

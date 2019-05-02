@@ -7,6 +7,7 @@ public class FacultyBuild {
     private Faculty faculty;
 
     public FacultyBuild() {
+        faculty = new Faculty();
     }
     
     public FacultyBuild setAbbr(String abbr) {

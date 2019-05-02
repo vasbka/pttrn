@@ -1,11 +1,20 @@
 package com.honcharenko.entity;
 
 public class Point {
+    private int id;
     private Subject subject;
     private Enrollee enrollee;
     private double point;
 
     public Point() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Subject getSubject() {
@@ -30,5 +39,15 @@ public class Point {
 
     public void setPoint(double point) {
         this.point = point;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "id=" + id +
+                ", subject=" + subject +
+                ", enrollee=" + enrollee +
+                ", point=" + point +
+                '}';
     }
 }
