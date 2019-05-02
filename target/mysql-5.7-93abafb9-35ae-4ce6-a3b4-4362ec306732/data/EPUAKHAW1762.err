@@ -1,7 +1,0 @@
-2019-04-25T19:56:22.039094Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
-2019-04-25T19:56:22.039094Z 0 [ERROR] Cannot open Windows EventLog; check privileges, or start server with --log_syslog=0
-2019-04-25T19:56:23.289641Z 0 [Warning] InnoDB: New log files created, LSN=45790
-2019-04-25T19:56:23.348336Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
-2019-04-25T19:56:23.426981Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 33da2f09-6794-11e9-8402-025041000001.
-2019-04-25T19:56:23.436955Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
-2019-04-25T19:56:23.443902Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
