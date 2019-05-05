@@ -3,11 +3,10 @@ package com.honcharenko.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Enrollee {
+public class Enrollee implements EntityId{
     private int id;
     private String firstName;
     private String lastName;
-    private String city;
     private String login;
     private String password;
     private String email;
@@ -39,14 +38,6 @@ public class Enrollee {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String getLogin() {
@@ -91,7 +82,6 @@ public class Enrollee {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", city='" + city + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +

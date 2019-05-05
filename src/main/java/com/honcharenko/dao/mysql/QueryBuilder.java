@@ -1,9 +1,9 @@
 package com.honcharenko.dao.mysql;
 
-import javax.management.Query;
 
 public class QueryBuilder {
     private StringBuilder stringBuilder;
+    public static final String ALL = "*";
 
     public QueryBuilder() {
         this.stringBuilder = new StringBuilder();
@@ -11,6 +11,16 @@ public class QueryBuilder {
 
     public QueryBuilder select(String value) {
         stringBuilder.append("SELECT ").append(value).append(" ");
+        return this;
+    }
+
+    public QueryBuilder insert(String tableName) {
+        stringBuilder.append("INSERT INTO ").append(tableName).append(" ");
+        return this;
+    }
+
+    public QueryBuilder values(String values) {
+        stringBuilder.append("VALUES(").append(values).append(") ");
         return this;
     }
 
@@ -46,6 +56,21 @@ public class QueryBuilder {
 
     public QueryBuilder union() {
         stringBuilder.append("UNION ");
+        return this;
+    }
+
+    public QueryBuilder delete () {
+        stringBuilder.append("DELETE ");
+        return this;
+    }
+
+    public QueryBuilder update(String tableName) {
+        stringBuilder.append("UPDATE ").append(tableName).append(" ");
+        return this;
+    }
+
+    public QueryBuilder updateSetValues(String values) {
+        stringBuilder.append("SET ").append(values).append(" ");
         return this;
     }
 

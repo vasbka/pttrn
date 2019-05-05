@@ -17,14 +17,4 @@ public interface DAO<E> {
 
     E getById(int id) throws SQLException;
 
-    default void close(List<AutoCloseable> closeables) {
-        closeables.forEach(autoCloseable -> {
-            try {
-                autoCloseable.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
 }

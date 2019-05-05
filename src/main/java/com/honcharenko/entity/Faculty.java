@@ -2,12 +2,23 @@ package com.honcharenko.entity;
 
 import java.util.HashMap;
 
-public class Faculty {
+public class Faculty implements EntityId {
+    private int id;
     private String abbr;
     private String fullName;
     private int budgetCount;
     private int totalCount;
     private HashMap<Subject, Double> subjects;
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getAbbr() {
         return abbr;

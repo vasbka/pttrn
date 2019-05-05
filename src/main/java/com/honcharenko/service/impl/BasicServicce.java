@@ -84,7 +84,14 @@ public class BasicServicce<E> implements Service<E> {
     }
 
     @Override
-    public E update(E e) {
-        return null;
+    public E update(E input) {
+        DAO<E> dao = daoManager.getFactory().getDaoByEntityType(type);
+        E object = null;
+        try {
+            object = dao.update(input);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return object;
     }
 }

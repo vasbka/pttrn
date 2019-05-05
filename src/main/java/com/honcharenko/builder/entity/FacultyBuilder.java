@@ -3,34 +3,39 @@ package com.honcharenko.builder.entity;
 import com.honcharenko.entity.Faculty;
 import com.honcharenko.entity.Subject;
 
-public class FacultyBuild {
+public class FacultyBuilder {
     private Faculty faculty;
 
-    public FacultyBuild() {
+    public FacultyBuilder() {
         faculty = new Faculty();
     }
+
+    public FacultyBuilder setId(int id) {
+        this.faculty.setId(id);
+        return this;
+    }
     
-    public FacultyBuild setAbbr(String abbr) {
+    public FacultyBuilder setAbbr(String abbr) {
         this.faculty.setAbbr(abbr);
         return this;
     }
     
-    public FacultyBuild setFullName(String fullname) {
+    public FacultyBuilder setFullName(String fullname) {
         this.faculty.setFullName(fullname);
         return this;
     }
     
-    public FacultyBuild setBudgetCount(int budgetCount) {
+    public FacultyBuilder setBudgetCount(int budgetCount) {
         this.faculty.setBudgetCount(budgetCount);
         return this;
     }
     
-    public FacultyBuild setTotalCount(int totalCount) {
+    public FacultyBuilder setTotalCount(int totalCount) {
         this.faculty.setTotalCount(totalCount);
         return this;
     }
     
-    public FacultyBuild addSubject(Subject subject, double coefficient) {
+    public FacultyBuilder addSubject(Subject subject, double coefficient) {
         this.faculty.addSubject(subject, coefficient);
         return this;
     }

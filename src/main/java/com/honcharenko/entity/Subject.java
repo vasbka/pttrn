@@ -1,6 +1,6 @@
 package com.honcharenko.entity;
 
-public class Subject {
+public class Subject implements EntityId{
     private int id;
     private String shortName;
     private String fullName;

@@ -9,12 +9,8 @@ public class Server {
     public static void main(String[] args) {
         RoutingHandler add = Handlers
                 .routing()
-                .addAll(EnrolleeHandler.getEnrolleeHandler(DaoType.MYSQL));
-//                .add("GET", "/enrollee/{enrolleeId}", exchange -> {
-//                    exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/json");
-//                    String itemId2 = exchange.getQueryParameters().get("itemId").getFirst();
-//                    exchange.getResponseSender().send(itemId2);
-//                });
+                .addAll(new EnrolleeHandler(DaoType.MYSQL).getHandler())
+                .addAll(new FacultyHandler(DaoType.MYSQL).getHandler());
         Undertow.builder()
                 .addHttpListener(8090, "localhost")
                 .setHandler(add)

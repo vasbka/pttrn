@@ -1,6 +1,6 @@
 package com.honcharenko.entity;
 
-public class Point {
+public class Point implements EntityId {
     private int id;
     private Subject subject;
     private Enrollee enrollee;
