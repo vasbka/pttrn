@@ -1,8 +1,5 @@
 package com.honcharenko.util;
 
-import com.honcharenko.dao.DAO;
-import com.honcharenko.entity.Faculty;
-import com.honcharenko.entity.Subject;
 import com.honcharenko.factory.AbstractDaoFactory;
 import com.honcharenko.factory.MySqlFactory;
 import com.honcharenko.factory.NoSqlFactory;
