@@ -2,11 +2,18 @@ package com.honcharenko.dao.mysql;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Faculty;
+import com.honcharenko.entity.Property;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class FacultyDaoImpl implements DAO<Faculty> {
     public List<Faculty> getAll() {
+        return null;
+    }
+
+    @Override
+    public List<Faculty> getByProperty(List<Property> properties) throws SQLException {
         return null;
     }
 

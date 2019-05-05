@@ -2,11 +2,18 @@ package com.honcharenko.dao.mysql;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Point;
+import com.honcharenko.entity.Property;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class PointDaoImpl implements DAO<Point> {
     public List<Point> getAll() {
+        return null;
+    }
+
+    @Override
+    public List<Point> getByProperty(List<Property> properties) throws SQLException {
         return null;
     }
 

@@ -12,9 +12,9 @@ public class ConnectionManager {
         ds.setUrl("jdbc:mysql://localhost:1234/init");
         ds.setUsername("user");
         ds.setPassword("pwd");
-        ds.setMinIdle(2);
-        ds.setMaxActive(4);
-        ds.setMaxOpenPreparedStatements(20);
+        ds.setMinIdle(1);
+        ds.setMaxActive(100);
+        ds.setMaxOpenPreparedStatements(100);
     }
 
     public static Connection getConnection() throws SQLException {

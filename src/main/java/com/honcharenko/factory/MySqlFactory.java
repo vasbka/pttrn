@@ -10,25 +10,22 @@ import com.honcharenko.entity.Faculty;
 import com.honcharenko.entity.Point;
 import com.honcharenko.entity.Subject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MySqlFactory implements AbstractDaoFactory {
+    private static Map<Class, DAO> entityDao = new HashMap<>();
 
-    @Override
-    public DAO<Enrollee> getEnrolleeDao() {
-        return new EnrolleeDaoImpl();
+    public MySqlFactory() {
+        entityDao.put(Enrollee.class, new EnrolleeDaoImpl());
+        entityDao.put(Faculty.class, new FacultyDaoImpl());
+        entityDao.put(Point.class, new PointDaoImpl());
+        entityDao.put(Subject.class, new SubjectDaoImpl());
     }
 
     @Override
-    public DAO<Subject> getSubjectDao() {
-        return new SubjectDaoImpl();
+    public DAO getDaoByEntityType(Class type) {
+        return entityDao.get(type);
     }
 
-    @Override
-    public DAO<Faculty> getFacultyDao() {
-        return new FacultyDaoImpl();
-    }
-
-    @Override
-    public DAO<Point> getPointDao() {
-        return new PointDaoImpl();
-    }
 }

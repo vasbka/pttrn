@@ -8,22 +8,7 @@ import com.honcharenko.entity.Subject;
 
 public class NoSqlFactory implements AbstractDaoFactory {
     @Override
-    public DAO<Enrollee> getEnrolleeDao() {
-        return null;
-    }
-
-    @Override
-    public DAO<Subject> getSubjectDao() {
-        return null;
-    }
-
-    @Override
-    public DAO<Faculty> getFacultyDao() {
-        return null;
-    }
-
-    @Override
-    public DAO<Point> getPointDao() {
+    public DAO getDaoByEntityType(Class type) {
         return null;
     }
 }

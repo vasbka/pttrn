@@ -1,5 +1,7 @@
 package com.honcharenko.service;
 
+import com.honcharenko.entity.Property;
+
 import java.util.List;
 
 public interface Service<E> {
@@ -11,7 +13,7 @@ public interface Service<E> {
 
     List<E> getAll();
 
-    E getByProperty(String propertyName, String propertyValue);
+    List<E> getByProperty(List<Property> properties);
 
     E update(E e);
 

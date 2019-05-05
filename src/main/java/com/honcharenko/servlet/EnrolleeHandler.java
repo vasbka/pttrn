@@ -3,6 +3,7 @@ package com.honcharenko.servlet;
 import com.google.gson.Gson;
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
+import com.honcharenko.entity.Property;
 import com.honcharenko.service.impl.EnrolleeService;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
@@ -11,6 +12,7 @@ import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
 import io.undertow.util.HttpString;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +53,18 @@ public class EnrolleeHandler {
                 .put("/" + ENROLLEE_SERVLET_NAME + "/add", httpServerExchange -> {
                     Enrollee enrolle = extractParamToEnrollee(httpServerExchange);
                     Enrollee add = enrolleeService.add(enrolle);
-                    send(httpServerExchange, new Gson().toJson(add));
+                    send(httpServerExchange, gson.toJson(add));
+                })
+                .post("/" + ENROLLEE_SERVLET_NAME + "/delete/{" + ENROLLEE_ID_PARAM + "}", httpServerExchange -> {
+                    String enrolleeId = httpServerExchange.getQueryParameters().get(ENROLLEE_ID_PARAM).getFirst();
+                    Enrollee add = enrolleeService.removeById(Integer.valueOf(enrolleeId));
+                    send(httpServerExchange, gson.toJson(add));
+                })
+                .get("/" + ENROLLEE_SERVLET_NAME + "/byParams", httpServerExchange -> {
+                    List<Property> properties = new ArrayList<>();
+                    httpServerExchange.getQueryParameters().forEach((key, value) -> properties.add(new Property(key, value.getFirst())));
+                    List<Enrollee> byProperty = enrolleeService.getByProperty(properties);
+                    send(httpServerExchange, gson.toJson(byProperty));
                 });
     }
 
