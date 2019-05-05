@@ -7,8 +7,9 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
     private static BasicDataSource ds = new BasicDataSource();
+    private static ConnectionManager instance;
 
-    static {
+    private ConnectionManager() {
         ds.setUrl("jdbc:mysql://localhost:1234/init");
         ds.setUsername("user");
         ds.setPassword("pwd");
@@ -17,7 +18,14 @@ public class ConnectionManager {
         ds.setMaxOpenPreparedStatements(100);
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static ConnectionManager getInstance() {
+        if (instance == null) {
+            instance = new ConnectionManager();
+        }
+        return instance;
+    }
+
+    public Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
 

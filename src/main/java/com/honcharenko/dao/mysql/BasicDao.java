@@ -24,7 +24,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public List<E> getAll() throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.select(QueryBuilder.ALL).from(tableName);
-        connection = ConnectionManager.getConnection();
+        connection = ConnectionManager.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         resultSet = preparedStatement.executeQuery();
         List<E> list = new ArrayList<>();
@@ -40,7 +40,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
         String conditions = properties.stream().map(property -> property.getName() + " = ?").collect(Collectors.joining(" AND "));
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.select(QueryBuilder.ALL).from(tableName).where(conditions);
-        connection = ConnectionManager.getConnection();
+        connection = ConnectionManager.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         int count = 1;
         for (Property property : properties) {
@@ -58,7 +58,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public E add(E object) throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.insert(tableName).values(prepareEntityValuesToInsert(object));
-        connection = ConnectionManager.getConnection();
+        connection = ConnectionManager.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build(), Statement.RETURN_GENERATED_KEYS);
         preparedPropertiesValue(preparedStatement, object);
         preparedStatement.execute();
@@ -78,7 +78,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
         }
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.delete().from(tableName).where(getIdColumnName() + "=?");
-        connection = ConnectionManager.getConnection();
+        connection = ConnectionManager.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         preparedStatement.setInt(1, e.getId());
         preparedStatement.execute();
@@ -90,7 +90,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public E update(E e) throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.update(tableName).updateSetValues(getSetUpdateValues()).where(getIdColumnName() + " = ?");
-        connection = ConnectionManager.getConnection();
+        connection = ConnectionManager.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         int lastInsertedIndex = preparedPropertiesValue(preparedStatement, e);
         preparedStatement.setInt(lastInsertedIndex, e.getId());
@@ -102,7 +102,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public E getById(int id) throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.select(QueryBuilder.ALL).from(tableName).where(getIdColumnName() + " = ?");
-        connection = ConnectionManager.getConnection();
+        connection = ConnectionManager.getInstance().getConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         preparedStatement.setInt(1, id);
         resultSet = preparedStatement.executeQuery();
