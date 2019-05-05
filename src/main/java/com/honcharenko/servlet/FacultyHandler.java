@@ -1,33 +1,30 @@
 package com.honcharenko.servlet;
 
 import com.google.gson.Gson;
-import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.service.impl.EnrolleeService;
 import com.honcharenko.util.DaoType;
-import com.honcharenko.util.Fields;
 import io.undertow.Handlers;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
 import io.undertow.util.HttpString;
 
-import java.util.Deque;
 import java.util.List;
-import java.util.Map;
 
-public class EnrolleeHandler {
+public class FacultyHandler {
 
-    private static final String ENROLLEE_SERVLET_NAME =  "enrollee";
-    private static final String ENROLLEE_ID_PARAM = "enrolleeId";
+    private static final String FACULTY_SERVLET_NAME =  "faculty";
+    private static final String FACULTY_ID_PARAM = "facultyId";
     private static EnrolleeService enrolleeService;
     private static Gson gson = new Gson();
+
 
     public static RoutingHandler getEnrolleeHandler(DaoType daoType) {
         enrolleeService = new EnrolleeService(daoType);
         return Handlers
                 .routing()
-                .get("/" + ENROLLEE_SERVLET_NAME+ "/{" + ENROLLEE_ID_PARAM + "}", httpServerExchange -> {
-                    String enrolleeId = httpServerExchange.getQueryParameters().get(ENROLLEE_ID_PARAM).getFirst();
+                .get("/" + FACULTY_SERVLET_NAME + "/{" + FACULTY_ID_PARAM + "}", httpServerExchange -> {
+                    String enrolleeId = httpServerExchange.getQueryParameters().get(FACULTY_ID_PARAM).getFirst();
                     if (enrolleeId == null) {
                         httpServerExchange.setStatusCode(400);
                         httpServerExchange.getResponseSender().send("Enrollee id should not be empty.");
@@ -40,35 +37,24 @@ public class EnrolleeHandler {
                     }
                     send(httpServerExchange, gson.toJson(enrollee));
                 })
-                .get("/" + ENROLLEE_SERVLET_NAME, httpServerExchange -> {
+                .get("/" + FACULTY_SERVLET_NAME, httpServerExchange -> {
                     List<Enrollee> all = enrolleeService.getAll();
                     send(httpServerExchange, gson.toJson(all));
                 })
-                .post("/" + ENROLLEE_SERVLET_NAME + "/{" + ENROLLEE_ID_PARAM + "}", httpServerExchange -> {
+                .post("/" + FACULTY_SERVLET_NAME + "/{" + FACULTY_ID_PARAM + "}", httpServerExchange -> {
                     Enrollee enrollee = extractParamToEnrollee(httpServerExchange);
                     send(httpServerExchange, gson.toJson(enrollee));
                 })
-                .put("/" + ENROLLEE_SERVLET_NAME + "/add", httpServerExchange -> {
+                .put("/" + FACULTY_SERVLET_NAME + "/add", httpServerExchange -> {
                     Enrollee enrolle = extractParamToEnrollee(httpServerExchange);
                     Enrollee add = enrolleeService.add(enrolle);
                     send(httpServerExchange, new Gson().toJson(add));
                 });
     }
 
-    private static Enrollee extractParamToEnrollee(HttpServerExchange httpServerExchange) {
-        Map<String, Deque<String>> queryParameters = httpServerExchange.getQueryParameters();
-        EnrolleeBuilder enrolleeBuilder = new EnrolleeBuilder();
-        return enrolleeBuilder.setEmail(queryParameters.get(Fields.ENROLLEE_EMAIL).getFirst())
-                                    .setFirstName(queryParameters.get(Fields.ENROLLEE_FIRST_NAME).getFirst())
-                                    .setLastName(queryParameters.get(Fields.ENROLLEE_LAST_NAME).getFirst())
-                                    .setLogin(queryParameters.get(Fields.ENROLLEE_LOGIN).getFirst())
-                                    .setPassword(queryParameters.get(Fields.ENROLLEE_PASSWORD).getFirst())
-                                .build();
-    }
 
     private static void send(HttpServerExchange httpServerExchange, String text) {
         httpServerExchange.getResponseHeaders().add(new HttpString("Content-Type".getBytes()), "text/json; charset=utf-8");
         httpServerExchange.getResponseSender().send(text, java.nio.charset.Charset.forName("UTF-8"));
     }
-
 }

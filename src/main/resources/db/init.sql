@@ -1,4 +1,5 @@
 SET FOREIGN_KEY_CHECKS=0;
+SET CHARSET 'utf8';
 DROP TABLE IF EXISTS  enrollee, subjectType, subject,
 faculty, facultySubjectType,request, statement, facultysubject, enrolleeSubject, statementRequests;
  SET FOREIGN_KEY_CHECKS=1;

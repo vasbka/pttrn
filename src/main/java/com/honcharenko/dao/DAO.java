@@ -1,19 +1,19 @@
 package com.honcharenko.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface DAO<E> {
-    List<E> getAll();
+    List<E> getAll() throws SQLException;
 
     E getByProperty(String propertyName, String propertyValue);
 
-    E add(E e);
+    E add(E e) throws SQLException;
 
-    boolean remove(E e);
+    E removeById(int id) throws SQLException;
 
-    E removeById(int id);
+    E update(E e) throws SQLException;
 
-    E update(E e);
+    E getById(int id) throws SQLException;
 
-    E getById(int id);
 }

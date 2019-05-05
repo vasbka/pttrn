@@ -9,26 +9,12 @@ import com.honcharenko.entity.Enrollee;
 import com.honcharenko.entity.Faculty;
 import com.honcharenko.entity.Point;
 import com.honcharenko.entity.Subject;
-import org.apache.commons.dbcp.BasicDataSource;
-
-import java.sql.SQLException;
 
 public class MySqlFactory implements AbstractDaoFactory {
 
-    private BasicDataSource ds;
-
-    public MySqlFactory(BasicDataSource dataSource) {
-        this.ds = dataSource;
-    }
-
     @Override
     public DAO<Enrollee> getEnrolleeDao() {
-        try {
-            return new EnrolleeDaoImpl(ds.getConnection());
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+        return new EnrolleeDaoImpl();
     }
 
     @Override
