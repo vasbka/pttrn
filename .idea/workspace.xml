@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="460d4c2f-29c4-41fc-84e2-d8e003528783" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/EnrolleeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/EnrolleeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/FacultyDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/FacultyDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/PointDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/PointDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/SubjectDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/SubjectDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/factory/AbstractDaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/factory/AbstractDaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/factory/MySqlFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/factory/MySqlFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/factory/NoSqlFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/factory/NoSqlFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/BasicServicce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/BasicServicce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/EnrolleeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/EnrolleeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/servlet/EnrolleeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/servlet/EnrolleeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/servlet/FacultyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/servlet/FacultyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/Fields.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/Fields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/Queries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/Queries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/init.sql" afterDir="false" />
-    </list>
+    <list default="true" id="460d4c2f-29c4-41fc-84e2-d8e003528783" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,11 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/EnrolleeDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -467,7 +443,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557025571889" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557025628378" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -583,7 +559,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.815818" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1165,11 +1141,8 @@ resultSet.getInt(1);</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/EnrolleeDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
