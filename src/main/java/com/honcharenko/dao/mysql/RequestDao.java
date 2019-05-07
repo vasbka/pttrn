@@ -3,12 +3,13 @@ package com.honcharenko.dao.mysql;
 import com.honcharenko.entity.Request;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;s
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RequestDao extends BasicDao<Request> {
-    public RequestDao(String tableName) {
-        super(tableName);
+    private static final String TABLE_NAME = "request";
+    public RequestDao() {
+        super(TABLE_NAME);
     }
 
     @Override

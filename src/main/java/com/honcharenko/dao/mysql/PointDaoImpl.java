@@ -1,44 +1,41 @@
 package com.honcharenko.dao.mysql;
 
-import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Point;
-import com.honcharenko.entity.Property;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
-public class PointDaoImpl implements DAO<Point> {
-    public List<Point> getAll() {
+public class PointDaoImpl extends BasicDao<Point> {
+
+    private static final String TABLE_NAME = "enrolleeSubject";
+
+    public PointDaoImpl() {
+        super(TABLE_NAME);
+    }
+
+    @Override
+    Point extractEntityFromResultSet(ResultSet resultSet) throws SQLException {
         return null;
     }
 
     @Override
-    public List<Point> getByProperty(List<Property> properties) throws SQLException {
-        return null;
-    }
-
-    public Point getByProperty(String propertyName, String propertyValue) {
-        return null;
-    }
-
-    public Point add(Point point) {
-        return null;
-    }
-
-    public boolean remove(Point point) {
-        return false;
-    }
-
-    public Point removeById(int id) {
-        return null;
-    }
-
-    public Point update(Point point) {
+    String prepareEntityValuesToInsert(Point point) {
         return null;
     }
 
     @Override
-    public Point getById(int id) {
+    int preparedPropertiesValue(PreparedStatement preparedStatement, Point point) throws SQLException {
+        return 0;
+    }
+
+    @Override
+    String getIdColumnName() {
+        return null;
+    }
+
+    @Override
+    String getSetUpdateValues() {
         return null;
     }
 }

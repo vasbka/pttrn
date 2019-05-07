@@ -5,7 +5,9 @@ import com.honcharenko.entity.Enrollee;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
 
@@ -52,4 +54,5 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
     String getSetUpdateValues() {
         return Queries.ENROLLEE_UPDATE;
     }
+
 }

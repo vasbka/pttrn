@@ -1,8 +1,13 @@
 package com.honcharenko.servlet;
 
 import com.honcharenko.builder.entity.EnrolleeBuilder;
+import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Enrollee;
+import com.honcharenko.observer.Subscriber;
+import com.honcharenko.observer.impl.DaoPublisher;
+import com.honcharenko.observer.impl.DaoSubsciber;
 import com.honcharenko.service.impl.EnrolleeService;
+import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
 import io.undertow.server.HttpServerExchange;
@@ -15,6 +20,8 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
         this.servletName = "enrollee";
         this.idParamName = "enrolleeId";
         this.service = new EnrolleeService(daoType);
+
+
     }
 
     protected Enrollee extractParamForUpdate(HttpServerExchange httpServerExchange) {
