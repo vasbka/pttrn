@@ -69,7 +69,7 @@ public abstract class BasicHandler<E> {
     }
 
 
-    private static void send(HttpServerExchange httpServerExchange, String text) {
+    protected static void send(HttpServerExchange httpServerExchange, String text) {
         httpServerExchange.getResponseHeaders().add(new HttpString("Content-Type".getBytes()), "text/json; charset=utf-8");
         httpServerExchange.getResponseSender().send(text, java.nio.charset.Charset.forName("UTF-8"));
     }

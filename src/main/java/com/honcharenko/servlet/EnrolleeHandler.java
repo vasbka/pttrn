@@ -1,20 +1,28 @@
 package com.honcharenko.servlet;
 
+import com.google.gson.Gson;
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
+import com.honcharenko.memento.EnrolleeCaretaker;
+import com.honcharenko.memento.Snapshot;
+import com.honcharenko.memento.impl.EnrolleeSnapshot;
 import com.honcharenko.service.impl.EnrolleeService;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
 import io.undertow.server.HttpServerExchange;
+import io.undertow.server.RoutingHandler;
 
 import java.util.Deque;
 import java.util.Map;
 
 public class EnrolleeHandler extends BasicHandler<Enrollee> {
+    private EnrolleeCaretaker enrolleeCaretaker;
+
     public EnrolleeHandler(DaoType daoType) {
         this.servletName = "enrollee";
         this.idParamName = "enrolleeId";
         this.service = new EnrolleeService(daoType);
+        this.enrolleeCaretaker = EnrolleeCaretaker.getInstance();
     }
 
     protected Enrollee extractParamForUpdate(HttpServerExchange httpServerExchange) {
@@ -35,4 +43,20 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
                                 .build();
     }
 
+
+    @Override
+    public RoutingHandler getHandler() {
+        RoutingHandler handler = super.getHandler();
+        handler.get("/" + servletName + "/{" + idParamName + "}", httpServerExchange -> {
+            EnrolleeSnapshot snapshot = (EnrolleeSnapshot)service.getById(Integer.valueOf(idParamName)).createSnapshot();
+            enrolleeCaretaker.addSnapshot(snapshot);
+        })
+        .get("/" + servletName + "/getAllSnapshots", httpServerExchange -> {
+            send(httpServerExchange, new Gson().toJson(enrolleeCaretaker));
+        })
+        .get("/" + servletName + "/undo", httpServerExchange -> {
+            send(httpServerExchange, new Gson().toJson(enrolleeCaretaker.restore()));
+        });
+        return handler;
+    }
 }

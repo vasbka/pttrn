@@ -1,5 +1,8 @@
 package com.honcharenko.entity;
 
+import com.honcharenko.memento.Snapshot;
+import com.honcharenko.memento.impl.EnrolleeSnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,6 +77,10 @@ public class Enrollee implements EntityId{
 
     public void addPoints(Point point) {
         this.points.add(point);
+    }
+
+    public Snapshot createSnapshot() {
+        return new EnrolleeSnapshot(this, id, firstName, lastName, login, password, email, points);
     }
 
     @Override

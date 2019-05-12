@@ -3,7 +3,7 @@ package com.honcharenko.dao.mysql;
 import com.honcharenko.entity.Request;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;s
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RequestDao extends BasicDao<Request> {
