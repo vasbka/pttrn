@@ -7,8 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RequestDao extends BasicDao<Request> {
-    public RequestDao(String tableName) {
-        super(tableName);
+    private static final String TABLE_NAME = "request";
+    public RequestDao() {
+        super(TABLE_NAME);
     }
 
     @Override

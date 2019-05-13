@@ -3,6 +3,7 @@ package com.honcharenko.dao.mysql;
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.EntityId;
 import com.honcharenko.entity.Property;
+import com.honcharenko.observer.impl.DaoPublisher;
 import com.honcharenko.util.ConnectionManager;
 
 import java.sql.*;
@@ -15,9 +16,11 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
+    private DaoPublisher daoPublisher;
 
     public BasicDao(String tableName) {
         this.tableName = tableName;
+        this.daoPublisher = new DaoPublisher();
     }
 
     @Override
@@ -67,6 +70,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
             object.setId((int)resultSet.getLong(1));
         }
         close();
+        daoPublisher.notifySubscribers("Entity " + object + " successfully created");
         return object;
     }
 
@@ -83,6 +87,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
         preparedStatement.setInt(1, e.getId());
         preparedStatement.execute();
         close();
+        daoPublisher.notifySubscribers("Entity " + e + " successfully removed.");
         return e;
     }
 
@@ -111,6 +116,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
             object = extractEntityFromResultSet(resultSet);
         }
         close();
+        daoPublisher.notifySubscribers("Entity " + object + " successfully updated.");
         return object;
     }
 
@@ -128,5 +134,10 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
         this.connection.close();
         this.preparedStatement.close();
         this.resultSet.close();
+    }
+
+    @Override
+    public DaoPublisher getDaoPublish() {
+        return this.daoPublisher;
     }
 }

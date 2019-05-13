@@ -1,6 +1,8 @@
 package com.honcharenko.dao;
 
 import com.honcharenko.entity.Property;
+import com.honcharenko.observer.impl.DaoPublisher;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -17,4 +19,5 @@ public interface DAO<E> {
 
     E getById(int id) throws SQLException;
 
+    DaoPublisher getDaoPublish();
 }

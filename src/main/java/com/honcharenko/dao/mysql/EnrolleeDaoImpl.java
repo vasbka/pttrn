@@ -2,26 +2,23 @@ package com.honcharenko.dao.mysql;
 
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
-import com.honcharenko.memento.impl.EnrolleeSnapshot;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
 
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
 
     private static final String TABLE_NAME = "enrollee";
-    private final EnrolleeSnapshot enrolleeMemento;
-
     public EnrolleeDaoImpl() {
         super(TABLE_NAME);
-        enrolleeMemento = EnrolleeSnapshot.getInstance();
     }
 
     @Override
     public Enrollee update(Enrollee enrollee) throws SQLException {
         Enrollee update = super.update(enrollee);
-        enrolleeMemento.save(update);
         return update;
     }
 
@@ -61,4 +58,5 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
     String getSetUpdateValues() {
         return Queries.ENROLLEE_UPDATE;
     }
+
 }

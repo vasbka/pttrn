@@ -15,12 +15,16 @@ import java.util.Map;
 
 public class MySqlFactory implements AbstractDaoFactory {
     private static Map<Class, DAO> entityDao = new HashMap<>();
+    private static final FacultyDaoImpl facultyDao = new FacultyDaoImpl();
+    private static final EnrolleeDaoImpl enrolleeDao = new EnrolleeDaoImpl();
+    private static final PointDaoImpl pointDao = new PointDaoImpl();
+    private static final SubjectDaoImpl subjectDao = new SubjectDaoImpl();
 
     public MySqlFactory() {
-        entityDao.put(Enrollee.class, new EnrolleeDaoImpl());
-        entityDao.put(Faculty.class, new FacultyDaoImpl());
-        entityDao.put(Point.class, new PointDaoImpl());
-        entityDao.put(Subject.class, new SubjectDaoImpl());
+        entityDao.put(Enrollee.class, enrolleeDao);
+        entityDao.put(Faculty.class, facultyDao);
+        entityDao.put(Point.class, pointDao);
+        entityDao.put(Subject.class, subjectDao);
     }
 
     @Override

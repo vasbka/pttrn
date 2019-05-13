@@ -47,9 +47,11 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
     @Override
     public RoutingHandler getHandler() {
         RoutingHandler handler = super.getHandler();
-        handler.get("/" + servletName + "/{" + idParamName + "}", httpServerExchange -> {
-            EnrolleeSnapshot snapshot = (EnrolleeSnapshot)service.getById(Integer.valueOf(idParamName)).createSnapshot();
+        handler.get("/" + servletName + "/createSnapshot/{" + idParamName + "}", httpServerExchange -> {
+            Integer id = Integer.valueOf(httpServerExchange.getQueryParameters().get(idParamName).getFirst());
+            EnrolleeSnapshot snapshot = (EnrolleeSnapshot)service.getById(id).createSnapshot();
             enrolleeCaretaker.addSnapshot(snapshot);
+            send(httpServerExchange, String.valueOf(id));
         })
         .get("/" + servletName + "/getAllSnapshots", httpServerExchange -> {
             send(httpServerExchange, new Gson().toJson(enrolleeCaretaker));

@@ -49,4 +49,5 @@ public class FacultyDaoImpl extends BasicDao<Faculty> {
     String getSetUpdateValues() {
         return Queries.FACULTY_UPDATE;
     }
+
 }

@@ -1,6 +1,10 @@
 package com.honcharenko.util;
 
 import com.honcharenko.dao.DAO;
+import com.honcharenko.entity.Enrollee;
+import com.honcharenko.entity.Faculty;
+import com.honcharenko.entity.Point;
+import com.honcharenko.entity.Subject;
 import com.honcharenko.factory.AbstractDaoFactory;
 import com.honcharenko.factory.MySqlFactory;
 import com.honcharenko.factory.NoSqlFactory;
@@ -48,14 +52,14 @@ public class DaoHandler {
 
     public DAO getDaoByEntity(Entity entity) {
         if (entity == Entity.ENROLLEE) {
-            return factories.get(daoType).getEnrolleeDao();
+            return factories.get(daoType).getDaoByEntityType(Enrollee.class);
         }
         else if (entity == Entity.FACULTY) {
-            return factories.get(daoType).getFacultyDao();
+            return factories.get(daoType).getDaoByEntityType(Faculty.class);
         }
         else if (entity == Entity.SUBJECT) {
-            return factories.get(daoType).getSubjectDao();
+            return factories.get(daoType).getDaoByEntityType(Subject.class);
         }
-        return factories.get(daoType).getPointDao();
+        return factories.get(daoType).getDaoByEntityType(Point.class);
     }
 }
