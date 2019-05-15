@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.memento.EnrolleeCaretaker;
-import com.honcharenko.memento.Snapshot;
 import com.honcharenko.memento.impl.EnrolleeSnapshot;
 import com.honcharenko.service.impl.EnrolleeService;
 import com.honcharenko.util.DaoType;
@@ -50,7 +49,6 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
         handler.get("/" + servletName + "/createSnapshot/{" + idParamName + "}", httpServerExchange -> {
             Integer id = Integer.valueOf(httpServerExchange.getQueryParameters().get(idParamName).getFirst());
             EnrolleeSnapshot snapshot = (EnrolleeSnapshot)service.getById(id).createSnapshot();
-            enrolleeCaretaker.addSnapshot(snapshot);
             send(httpServerExchange, String.valueOf(id));
         })
         .get("/" + servletName + "/getAllSnapshots", httpServerExchange -> {

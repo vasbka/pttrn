@@ -79,7 +79,7 @@ public class Enrollee implements EntityId{
         this.points.add(point);
     }
 
-    public Snapshot createSnapshot() {
+    public EnrolleeSnapshot createSnapshot() {
         return new EnrolleeSnapshot(this, id, firstName, lastName, login, password, email, points);
     }
 

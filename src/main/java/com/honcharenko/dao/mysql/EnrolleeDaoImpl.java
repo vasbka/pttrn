@@ -2,6 +2,7 @@ package com.honcharenko.dao.mysql;
 
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
+import com.honcharenko.memento.EnrolleeCaretaker;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
 
@@ -19,6 +20,7 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
     @Override
     public Enrollee update(Enrollee enrollee) throws SQLException {
         Enrollee update = super.update(enrollee);
+        EnrolleeCaretaker.getInstance().addSnapshot(update.createSnapshot());
         return update;
     }
 
