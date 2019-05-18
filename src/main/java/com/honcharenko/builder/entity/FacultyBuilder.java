@@ -10,7 +10,7 @@ public class FacultyBuilder {
         faculty = new Faculty();
     }
 
-    public FacultyBuilder setId(int id) {
+    public FacultyBuilder setId(String id) {
         this.faculty.setId(id);
         return this;
     }

@@ -32,7 +32,7 @@ public class BasicServicce<E> implements Service<E> {
     }
 
     @Override
-    public E getById(int id) {
+    public E getById(String id) {
         DAO<E> dao = factory.getDaoByEntityType(type);
 
         E byId = null;
@@ -45,7 +45,7 @@ public class BasicServicce<E> implements Service<E> {
     }
 
     @Override
-    public E removeById(int id) {
+    public E removeById(String id) {
         DAO<E> dao = factory.getDaoByEntityType(type);
 
         E byId = null;

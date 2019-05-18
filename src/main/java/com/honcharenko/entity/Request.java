@@ -3,7 +3,7 @@ package com.honcharenko.entity;
 import java.util.Objects;
 
 public class Request implements EntityId {
-    private int id;
+    private String id;
     private int enrolleeId;
     private int FacultyId;
     private double averageScore;
@@ -11,11 +11,11 @@ public class Request implements EntityId {
     public Request() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

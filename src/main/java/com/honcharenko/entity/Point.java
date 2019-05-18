@@ -1,7 +1,7 @@
 package com.honcharenko.entity;
 
 public class Point implements EntityId {
-    private int id;
+    private String id;
     private Subject subject;
     private Enrollee enrollee;
     private double point;
@@ -9,11 +9,11 @@ public class Point implements EntityId {
     public Point() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -19,7 +19,7 @@ public class FacultyDaoImpl extends BasicDao<Faculty> {
     @Override
     Faculty extractEntityFromResultSet(ResultSet resultSet) throws SQLException {
         return new FacultyBuilder()
-                .setId(resultSet.getInt(Fields.FACULTY_ID))
+                .setId(resultSet.getString(Fields.FACULTY_ID))
                 .setBudgetCount(resultSet.getInt(Fields.FACULTY_BUDGET_COUNT))
                 .setFullName(resultSet.getString(Fields.FACULTY_NAME))
                 .setTotalCount(resultSet.getInt(Fields.FACULTY_GENERAL_COUNT))

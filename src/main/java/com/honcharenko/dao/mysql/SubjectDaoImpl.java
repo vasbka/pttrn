@@ -45,7 +45,7 @@ public class SubjectDaoImpl extends BasicDao<Subject> {
     }
 
     @Override
-    public Subject getById(int id) {
+    public Subject getById(String id) {
         return null;
     }
 

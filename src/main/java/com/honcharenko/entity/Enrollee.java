@@ -6,8 +6,8 @@ import com.honcharenko.memento.impl.EnrolleeSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Enrollee implements EntityId{
-    private int id;
+public class Enrollee implements EntityId {
+    private String id;
     private String firstName;
     private String lastName;
     private String login;
@@ -19,11 +19,11 @@ public class Enrollee implements EntityId{
         points = new ArrayList<>();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

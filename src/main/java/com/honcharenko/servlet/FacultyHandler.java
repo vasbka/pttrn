@@ -31,7 +31,7 @@ public class FacultyHandler extends BasicHandler<Faculty>{
     @Override
     protected Faculty extractParamForUpdate(HttpServerExchange httpServerExchange) {
         Faculty faculty = extractParam(httpServerExchange);
-        faculty.setId(Integer.valueOf(httpServerExchange.getQueryParameters().get(idParamName).getFirst()));
+        faculty.setId(httpServerExchange.getQueryParameters().get(idParamName).getFirst());
         return faculty;
     }
 }

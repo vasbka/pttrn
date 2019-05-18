@@ -27,7 +27,7 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
     @Override
     Enrollee extractEntityFromResultSet(ResultSet resultSet) throws SQLException {
         return new EnrolleeBuilder()
-                    .setId(resultSet.getInt(Fields.ENROLLEE_ID))
+                    .setId(resultSet.getString(Fields.ENROLLEE_ID))
                     .setFirstName(resultSet.getString(Fields.ENROLLEE_FIRST_NAME))
                     .setLastName(resultSet.getString(Fields.ENROLLEE_LAST_NAME))
                     .setEmail(resultSet.getString(Fields.ENROLLEE_EMAIL))

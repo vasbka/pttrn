@@ -3,7 +3,7 @@ package com.honcharenko.entity;
 import java.util.HashMap;
 
 public class Faculty implements EntityId {
-    private int id;
+    private String id;
     private String abbr;
     private String fullName;
     private int budgetCount;
@@ -11,12 +11,12 @@ public class Faculty implements EntityId {
     private HashMap<Subject, Double> subjects;
 
     @Override
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     @Override
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

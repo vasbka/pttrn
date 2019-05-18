@@ -8,7 +8,7 @@ import java.util.List;
 
 public class EnrolleeSnapshot implements Snapshot<Enrollee> {
     private Enrollee enrollee;
-    private int id;
+    private String id;
     private String firstName;
     private String lastName;
     private String login;
@@ -16,7 +16,7 @@ public class EnrolleeSnapshot implements Snapshot<Enrollee> {
     private String email;
     private List<Point> points;
 
-    public EnrolleeSnapshot(Enrollee enrollee, int id, String firstName, String lastName, String login, String password, String email, List<Point> points) {
+    public EnrolleeSnapshot(Enrollee enrollee, String id, String firstName, String lastName, String login, String password, String email, List<Point> points) {
         this.enrollee = enrollee;
         this.id = id;
         this.firstName = firstName;

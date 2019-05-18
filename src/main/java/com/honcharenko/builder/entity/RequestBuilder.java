@@ -9,7 +9,7 @@ public class RequestBuilder {
         this.request = new Request();
     }
 
-    public RequestBuilder setId(int id){
+    public RequestBuilder setId(String id){
         this.request.setId(id);
         return this;
     }

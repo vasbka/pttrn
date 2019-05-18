@@ -33,7 +33,7 @@ public abstract class BasicHandler<E> {
                                     + " id should not be empty.");
                             return;
                         }
-                        E object = service.getById(Integer.valueOf(id));
+                        E object = service.getById(id);
                         if (object == null) {
                             send(httpServerExchange, "{}");
                             return;
@@ -51,7 +51,7 @@ public abstract class BasicHandler<E> {
                 })
                 .post("/" + servletName + "/" + DELETE + "/{" +idParamName + "}", httpServerExchange -> {
                     String enrolleeId = httpServerExchange.getQueryParameters().get(idParamName).getFirst();
-                    E removed = service.removeById(Integer.valueOf(enrolleeId));
+                    E removed = service.removeById(enrolleeId);
                     send(httpServerExchange, gson.toJson(removed));
                 })
                 .get("/" + servletName + "/" + BY_PARAMETERS, httpServerExchange -> {

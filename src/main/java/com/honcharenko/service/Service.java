@@ -7,9 +7,9 @@ import java.util.List;
 public interface Service<E> {
     E add(E e);
 
-    E getById(int id);
+    E getById(String id);
 
-    E removeById(int id);
+    E removeById(String id);
 
     List<E> getAll();
 

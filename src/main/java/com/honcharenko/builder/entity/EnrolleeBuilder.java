@@ -10,7 +10,7 @@ public class EnrolleeBuilder {
         enrollee = new Enrollee();
     }
 
-    public EnrolleeBuilder setId(int id) {
+    public EnrolleeBuilder setId(String id) {
         enrollee.setId(id);
         return this;
     }

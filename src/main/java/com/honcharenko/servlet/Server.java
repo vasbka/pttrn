@@ -18,10 +18,10 @@ public class Server {
         daoByEntityType.getDaoPublish().addSubscriber(subscriber);
         RoutingHandler add = Handlers
                 .routing()
-                .addAll(new EnrolleeHandler(DaoType.MYSQL).getHandler())
+                .addAll(new EnrolleeHandler(DaoType.NOSQL).getHandler())
                 .addAll(new FacultyHandler(DaoType.MYSQL).getHandler());
         Undertow.builder()
-                .addHttpListener(8090, "localhost")
+                .addHttpListener(27019, "localhost")
                 .setHandler(add)
                 .build()
                 .start();

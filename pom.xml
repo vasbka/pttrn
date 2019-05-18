@@ -72,7 +72,26 @@
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-
+        <dependency>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tmep.org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.dizitart</groupId>
+            <artifactId>nitrite</artifactId>
+            <version>3.2.0</version>
+        </dependency>
     </dependencies>
 
 </project>

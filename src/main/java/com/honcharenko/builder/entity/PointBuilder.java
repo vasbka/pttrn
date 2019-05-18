@@ -26,7 +26,7 @@ public class PointBuilder {
         return this;
     }
 
-    public PointBuilder setId(int id) {
+    public PointBuilder setId(String id) {
         point.setId(id);
         return this;
     }

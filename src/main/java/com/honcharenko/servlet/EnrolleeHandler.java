@@ -27,7 +27,7 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
     protected Enrollee extractParamForUpdate(HttpServerExchange httpServerExchange) {
         String first = httpServerExchange.getQueryParameters().get(Fields.ENROLLEE_ID).getFirst();
         Enrollee enrollee = extractParam(httpServerExchange);
-        enrollee.setId(Integer.valueOf(first));
+        enrollee.setId(first);
         return enrollee;
     }
 
@@ -47,9 +47,9 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
     public RoutingHandler getHandler() {
         RoutingHandler handler = super.getHandler();
         handler.get("/" + servletName + "/createSnapshot/{" + idParamName + "}", httpServerExchange -> {
-            Integer id = Integer.valueOf(httpServerExchange.getQueryParameters().get(idParamName).getFirst());
-            EnrolleeSnapshot snapshot = (EnrolleeSnapshot)service.getById(id).createSnapshot();
-            send(httpServerExchange, String.valueOf(id));
+            String first = httpServerExchange.getQueryParameters().get(idParamName).getFirst();
+            EnrolleeSnapshot snapshot = service.getById(first).createSnapshot();
+            send(httpServerExchange, String.valueOf(first));
         })
         .get("/" + servletName + "/getAllSnapshots", httpServerExchange -> {
             send(httpServerExchange, new Gson().toJson(enrolleeCaretaker));

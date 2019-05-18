@@ -13,11 +13,11 @@ public interface DAO<E> {
 
     E add(E e) throws SQLException;
 
-    E removeById(int id) throws SQLException;
+    E removeById(String id) throws SQLException;
 
     E update(E e) throws SQLException;
 
-    E getById(int id) throws SQLException;
+    E getById(String id) throws SQLException;
 
     DaoPublisher getDaoPublish();
 }

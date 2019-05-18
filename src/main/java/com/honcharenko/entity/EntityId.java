@@ -1,7 +1,7 @@
 package com.honcharenko.entity;
 
 public interface EntityId {
-    void setId(int id);
+    void setId(String id);
 
-    int getId();
+    String getId();
 }

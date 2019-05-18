@@ -27,7 +27,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public List<E> getAll() throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.select(QueryBuilder.ALL).from(tableName);
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = ConnectionManager.getInstance().getMySqlConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         resultSet = preparedStatement.executeQuery();
         List<E> list = new ArrayList<>();
@@ -43,7 +43,7 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
         String conditions = properties.stream().map(property -> property.getName() + " = ?").collect(Collectors.joining(" AND "));
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.select(QueryBuilder.ALL).from(tableName).where(conditions);
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = ConnectionManager.getInstance().getMySqlConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         int count = 1;
         for (Property property : properties) {
@@ -61,13 +61,13 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public E add(E object) throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.insert(tableName).values(prepareEntityValuesToInsert(object));
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = ConnectionManager.getInstance().getMySqlConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build(), Statement.RETURN_GENERATED_KEYS);
         preparedPropertiesValue(preparedStatement, object);
         preparedStatement.execute();
         resultSet = preparedStatement.getGeneratedKeys();
         if(resultSet.next()) {
-            object.setId((int)resultSet.getLong(1));
+            object.setId(resultSet.getString(1));
         }
         close();
         daoPublisher.notifySubscribers("Entity " + object + " successfully created");
@@ -75,16 +75,16 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     }
 
     @Override
-    public E removeById(int id) throws SQLException {
+    public E removeById(String id) throws SQLException {
         E e = getById(id);
         if (e == null){
             return null;
         }
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.delete().from(tableName).where(getIdColumnName() + "=?");
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = ConnectionManager.getInstance().getMySqlConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
-        preparedStatement.setInt(1, e.getId());
+        preparedStatement.setString(1, e.getId());
         preparedStatement.execute();
         close();
         daoPublisher.notifySubscribers("Entity " + e + " successfully removed.");
@@ -95,21 +95,21 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     public E update(E e) throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.update(tableName).updateSetValues(getSetUpdateValues()).where(getIdColumnName() + " = ?");
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = ConnectionManager.getInstance().getMySqlConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
         int lastInsertedIndex = preparedPropertiesValue(preparedStatement, e);
-        preparedStatement.setInt(lastInsertedIndex, e.getId());
+        preparedStatement.setString(lastInsertedIndex, e.getId());
         preparedStatement.execute();
         return getById(e.getId());
     }
 
     @Override
-    public E getById(int id) throws SQLException {
+    public E getById(String id) throws SQLException {
         QueryBuilder queryBuilder = new QueryBuilder();
         queryBuilder.select(QueryBuilder.ALL).from(tableName).where(getIdColumnName() + " = ?");
-        connection = ConnectionManager.getInstance().getConnection();
+        connection = ConnectionManager.getInstance().getMySqlConnection();
         preparedStatement = connection.prepareStatement(queryBuilder.build());
-        preparedStatement.setInt(1, id);
+        preparedStatement.setString(1, id);
         resultSet = preparedStatement.executeQuery();
         E object = null;
         if (resultSet.next()) {

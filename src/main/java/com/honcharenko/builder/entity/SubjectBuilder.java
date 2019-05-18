@@ -9,7 +9,7 @@ public class SubjectBuilder {
         subject = new Subject();
     }
     
-    public SubjectBuilder setId(int id) {
+    public SubjectBuilder setId(String id) {
         subject.setId(id);
         return this;
     }
