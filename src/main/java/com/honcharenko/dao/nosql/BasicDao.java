@@ -17,7 +17,7 @@ import java.util.List;
 
 public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
 
-    public static final String ID_PROPERTY_NAME = "_id";
+    private static final String ID_PROPERTY_NAME = "_id";
 
     @Override
     public List<E> getAll() throws SQLException {

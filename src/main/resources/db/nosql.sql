@@ -148,16 +148,18 @@ db.subject.insertMany([
     {
         name: "english",
         exam: [
-            point: 141,
-            enrolle: [
-                {
-                    enrolleeFirstName:"vasyl",
-                    enrolleeLastName:"honcharenko",
-                    enrolleeLogin:"vsb",
-                    enrolleePassword:"pwd",
-                    enrolleeEmail:"vsb@aomc.com",
-                }
-            ]
+            {
+                point: 141,
+                enrolle: [
+                    {
+                        enrolleeFirstName:"vasyl",
+                        enrolleeLastName:"honcharenko",
+                        enrolleeLogin:"vsb",
+                        enrolleePassword:"pwd",
+                        enrolleeEmail:"vsb@aomc.com",
+                    }
+                ]
+            }
         ]
     },
     {

@@ -1,0 +1,96 @@
+[
+  {
+    "enrolleeFirstName" : "andrew",
+    "enrolleeLastName" : "pavlyk",
+    "enrolleeLogin" : "and",
+    "enrolleePassword" : "somepwd",
+    "enrolleeEmail" : "someenrolleeEmail@aomc.com",
+    "points" : {
+      "certificate" : [
+        {
+          "name" : "english",
+          "point" : 12
+        },
+        {
+          "name" : "physic",
+          "point" : 10
+        },
+        {
+          "name" : "history",
+          "point" : 11
+        }
+      ],
+      "exam" : [
+        {
+          "name" : "math",
+          "point" : 199
+        },
+        {
+          "name" : "history",
+          "point" : 200
+        },
+        {
+          "name" : "physic",
+          "point" : 195
+        }
+      ]
+    },
+    "requests" : [
+      {
+        "facultyName" : "Computer science",
+        "point" : 186
+      },
+      {
+        "facultyName" : "Programming engineering",
+        "point" : 190
+      }
+    ]
+  },
+  {
+    "enrolleeFirstName" : "vasyl",
+    "enrolleeLastName" : "honcharenko",
+    "enrolleeLogin" : "vsb",
+    "enrolleePassword" : "pwd",
+    "enrolleeEmail" : "vsb@aomc.com",
+    "points" : {
+      "certificate" : [
+        {
+          "name" : "math",
+          "point" : 11
+        },
+        {
+          "name" : "physic",
+          "point" : 8
+        },
+        {
+          "name" : "history",
+          "point" : 8
+        }
+      ],
+      "exam" : [
+        {
+          "name" : "math",
+          "point" : 176
+        },
+        {
+          "name" : "english",
+          "point" : 141
+        },
+        {
+          "name" : "physic",
+          "point" : 165
+        }
+      ]
+    },
+    "requests" : [
+      {
+        "facultyName" : "Computer science",
+        "point" : 186
+      },
+      {
+        "facultyName" : "Programming engineering",
+        "point" : 191
+      }
+    ]
+  }
+]

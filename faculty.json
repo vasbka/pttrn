@@ -1,0 +1,58 @@
+[
+  {
+    "name" : "Computer science",
+    "facultyBudgetCount" : 100,
+    "facultyGeneralCount" : 200,
+    "points" : [
+      {
+        "point" : 186,
+        "enrollee" : [
+          {
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          },
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "Programming engineering",
+    "facultyBudgetCount" : 5,
+    "facultyGeneralCount" : 15,
+    "points" : [
+      {
+        "point" : 190,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          }
+        ]
+      },
+      {
+        "point" : 191,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          }
+        ]
+      }
+    ]
+  }
+]

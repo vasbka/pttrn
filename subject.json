@@ -1,0 +1,154 @@
+[
+  {
+    "name" : "math",
+    "certificate" : [
+      {
+        "point" : 11,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          }
+        ]
+      }
+    ],
+    "exam" : [
+      {
+        "point" : 199,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          }
+        ]
+      },
+      {
+        "point" : 176,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "physic",
+    "certificate" : [
+      {
+        "point" : 8,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd"
+          }
+        ]
+      },
+      {
+        "point" : 10,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          }
+        ]
+      }
+    ],
+    "exam" : [
+      {
+        "point" : 165,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          }
+        ]
+      },
+      {
+        "point" : 195,
+        "enrolle" : [
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "english",
+    "exam" : [
+      {
+        "point" : 141,
+        "enrolle" : [
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name" : "history",
+    "certificate" : [
+      {
+        "point" : 11,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          },
+          {
+            "enrolleeFirstName" : "vasyl",
+            "enrolleeLastName" : "honcharenko",
+            "enrolleeLogin" : "vsb",
+            "enrolleePassword" : "pwd",
+            "enrolleeEmail" : "vsb@aomc.com"
+          }
+        ]
+      }
+    ],
+    "exam" : [
+      {
+        "point" : 200,
+        "enrollee" : [
+          {
+            "enrolleeFirstName" : "andrew",
+            "enrolleeLastName" : "pavlyk",
+            "enrolleeLogin" : "and",
+            "enrolleePassword" : "somepwd",
+            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+          }
+        ]
+      }
+    ]
+  }
+]
