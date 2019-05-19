@@ -1,0 +1,63 @@
+For count : 100
+    START INSERTED
+        MYSQL : 324
+        NoSQL : 84
+    END INSERTED
+    START SELECT BY NAME : Kingsley
+        MySql : 2
+        Nosql : 46
+END TEST FOR : 100
+-------------------------------------------------------
+For count : 1000
+    START INSERTED
+        MYSQL : 2360
+        NoSQL : 390
+    END INSERTED
+    START SELECT BY NAME : Dax
+        MySql : 2
+        Nosql : 2
+END TEST FOR : 1000
+-------------------------------------------------------
+For count : 10000
+    START INSERTED
+        MYSQL : 18583
+        NoSQL : 3210
+    END INSERTED
+    START SELECT BY NAME : Emmett
+        MySql : 5
+        Nosql : 6
+END TEST FOR : 10000
+-------------------------------------------------------
+For count : 50000
+    START INSERTED
+        MYSQL : 517526
+        NoSQL : 8429
+    END INSERTED
+    START SELECT BY NAME : Duke
+        MySql : 25
+        Nosql : 27
+END TEST FOR : 50000
+-------------------------------------------------------
+For count : 100000
+    START INSERTED
+        MYSQL :  1461179
+        NoSQL : 17369
+    END INSERTED
+    START SELECT BY NAME : Jermaine
+        MySql : 431
+        Nosql : 52
+END TEST FOR : 100000
+-------------------------------------------------------
+For count : 500000
+    START INSERTED
+        MYSQL : 
+8279039
+        NoSQL : 83134
+    END INSERTED
+    START SELECT BY NAME : Nolan
+        MySql : 1333
+        Nosql : 271
+END TEST FOR : 500000
+-------------------------------------------------------
+
+Process finished with exit code 0

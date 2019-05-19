@@ -18,6 +18,15 @@ public abstract class BasicDao<E extends EntityId> implements DAO<E> {
     private ResultSet resultSet;
     private DaoPublisher daoPublisher;
 
+
+    @Override
+    public void clearAll() throws SQLException {
+        connection = ConnectionManager.getInstance().getMySqlConnection();
+        preparedStatement = connection.prepareStatement("DELETE FROM enrollee");
+        preparedStatement.executeUpdate();
+    }
+
+
     public BasicDao(String tableName) {
         this.tableName = tableName;
         this.daoPublisher = new DaoPublisher();

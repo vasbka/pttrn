@@ -3,6 +3,7 @@ package com.honcharenko.dao.mysql;
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.memento.EnrolleeCaretaker;
+import com.honcharenko.util.ConnectionManager;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
 
@@ -45,9 +46,9 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
         int count = 1;
         preparedStatement.setString(count++, enrollee.getFirstName());
         preparedStatement.setString(count++, enrollee.getLastName());
-        preparedStatement.setString(count++, enrollee.getEmail());
         preparedStatement.setString(count++, enrollee.getLogin());
         preparedStatement.setString(count++, enrollee.getPassword());
+        preparedStatement.setString(count++, enrollee.getEmail());
         return count;
     }
 
@@ -60,5 +61,6 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
     String getSetUpdateValues() {
         return Queries.ENROLLEE_UPDATE;
     }
+
 
 }

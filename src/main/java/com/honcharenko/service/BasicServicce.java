@@ -1,4 +1,4 @@
-package com.honcharenko.service.impl;
+package com.honcharenko.service;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Property;

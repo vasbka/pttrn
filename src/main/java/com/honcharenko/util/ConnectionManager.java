@@ -20,7 +20,7 @@ public class ConnectionManager {
 
     private ConnectionManager() {
         //nosql
-        mongoClient = new MongoClient("localhost", 27020);
+        mongoClient = new MongoClient("localhost", 27018);
         db = mongoClient.getDatabase("test");
 
         //mysql

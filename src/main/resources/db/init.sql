@@ -7,11 +7,11 @@ faculty, facultySubjectType,request, statement, facultysubject, enrolleeSubject,
 
 CREATE TABLE enrollee(
 	enrolleeId INT AUTO_INCREMENT NOT NULL,
-	enrolleeFirstName VARCHAR(15) NOT NULL,
-	enrolleeLastName VARCHAR(15) NOT NULL,
-	enrolleeLogin VARCHAR(15) NOT NULL,
-	enrolleePassword VARCHAR(20) NOT NULL,
-	enrolleeEmail VARCHAR(50) NOT NULL,
+	enrolleeFirstName VARCHAR(100) NOT NULL,
+	enrolleeLastName VARCHAR(100) NOT NULL,
+	enrolleeLogin VARCHAR(400) NOT NULL,
+	enrolleePassword VARCHAR(100) NOT NULL,
+	enrolleeEmail VARCHAR(400) NOT NULL,
 	PRIMARY KEY(enrolleeId),
 	UNIQUE(enrolleeEmail),
 	UNIQUE(enrolleeLogin)

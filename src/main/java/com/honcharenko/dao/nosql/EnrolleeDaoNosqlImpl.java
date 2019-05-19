@@ -6,6 +6,8 @@ import com.honcharenko.util.Fields;
 import com.mongodb.BasicDBObject;
 import org.bson.Document;
 
+import java.sql.SQLException;
+
 public class EnrolleeDaoNosqlImpl extends BasicDao<Enrollee> {
     @Override
     public String getCollectionName() {
@@ -45,4 +47,5 @@ public class EnrolleeDaoNosqlImpl extends BasicDao<Enrollee> {
         basicDBObject.put(Fields.ENROLLEE_LOGIN, enrollee.getLogin());
         return basicDBObject;
     }
+
 }

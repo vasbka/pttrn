@@ -20,6 +20,16 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
     private static final String ID_PROPERTY_NAME = "_id";
 
     @Override
+    public void clearAll() throws SQLException {
+        BasicDBObject document = new BasicDBObject();
+        ConnectionManager.getInstance()
+                .getNoSqlDataBase()
+                .getCollection(getCollectionName())
+                .deleteMany(document);
+
+    }
+
+    @Override
     public List<E> getAll() throws SQLException {
         FindIterable<Document> entities = ConnectionManager.getInstance()
                 .getNoSqlDataBase()

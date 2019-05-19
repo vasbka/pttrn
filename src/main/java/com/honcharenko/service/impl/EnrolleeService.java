@@ -1,6 +1,7 @@
 package com.honcharenko.service.impl;
 
 import com.honcharenko.entity.Enrollee;
+import com.honcharenko.service.BasicServicce;
 import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 
