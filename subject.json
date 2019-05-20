@@ -1,153 +1,130 @@
 [
   {
-    "name" : "math",
-    "certificate" : [
+    "subjectName": "math",
+    "subjectTypeName": "certificate",
+    "points": [
       {
-        "point" : 11,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          }
-        ]
-      }
-    ],
-    "exam" : [
-      {
-        "point" : 199,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          }
-        ]
-      },
-      {
-        "point" : 176,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          }
-        ]
+        "enrolleeSubjectPoint": 11,
+        "enrolleeFirstName": "vasyl",
+        "enrolleeLastName": "honcharenko",
+        "enrolleeLogin": "vsb",
+        "enrolleePassword": "pwd",
+        "enrolleeEmail": "vsb@aomc.com"
       }
     ]
   },
   {
-    "name" : "physic",
-    "certificate" : [
+    "subjectName": "math",
+    "subjectTypeName": "exam",
+    "points": [
       {
-        "point" : 8,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd"
-          }
-        ]
+        "enrolleeSubjectPoint" : 199,
+        "enrolleeFirstName" : "andrew",
+        "enrolleeLastName" : "pavlyk",
+        "enrolleeLogin" : "and",
+        "enrolleePassword" : "somepwd",
+        "enrolleeEmail" : "someenrolleeEmail@aomc.com"
       },
       {
-        "point" : 10,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          }
-        ]
-      }
-    ],
-    "exam" : [
-      {
-        "point" : 165,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          }
-        ]
-      },
-      {
-        "point" : 195,
-        "enrolle" : [
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          }
-        ]
+        "enrolleeSubjectPoint" : 176,
+        "enrolleeFirstName" : "vasyl",
+        "enrolleeLastName" : "honcharenko",
+        "enrolleeLogin" : "vsb",
+        "enrolleePassword" : "pwd",
+        "enrolleeEmail" : "vsb@aomc.com"
       }
     ]
   },
   {
-    "name" : "english",
-    "exam" : [
+    "subjectName": "physic",
+    "subjectTypeName": "certificate",
+    "points": [
       {
-        "point" : 141,
-        "enrolle" : [
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          }
-        ]
+        "enrolleeSubjectPoint": 8,
+        "enrolleeFirstName": "vasyl",
+        "enrolleeLastName": "honcharenko",
+        "enrolleeLogin": "vsb",
+        "enrolleePassword": "pwd"
+      },
+      {
+        "enrolleeSubjectPoint": 10,
+        "enrolleeFirstName": "andrew",
+        "enrolleeLastName": "pavlyk",
+        "enrolleeLogin": "and",
+        "enrolleePassword": "somepwd",
+        "enrolleeEmail": "someenrolleeEmail@aomc.com"
       }
     ]
   },
   {
-    "name" : "history",
-    "certificate" : [
+    "subjectName": "physic",
+    "subjectTypeName": "exam",
+    "points" : [
       {
-        "point" : 11,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          },
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          }
-        ]
+        "enrolleeSubjectPoint" : 165,
+        "enrolleeFirstName" : "vasyl",
+        "enrolleeLastName" : "honcharenko",
+        "enrolleeLogin" : "vsb",
+        "enrolleePassword" : "pwd",
+        "enrolleeEmail" : "vsb@aomc.com"
+      },
+      {
+        "enrolleeSubjectPoint" : 195,
+        "enrolleeFirstName" : "andrew",
+        "enrolleeLastName" : "pavlyk",
+        "enrolleeLogin" : "and",
+        "enrolleePassword" : "somepwd",
+        "enrolleeEmail" : "someenrolleeEmail@aomc.com"
       }
-    ],
-    "exam" : [
+    ]
+  },
+  {
+    "subjectName" : "english",
+    "subjectTypeName": "exam",
+    "points" : [
       {
-        "point" : 200,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          }
-        ]
+        "enrolleeSubjectPoint" : 141,
+        "enrolleeFirstName" : "vasyl",
+        "enrolleeLastName" : "honcharenko",
+        "enrolleeLogin" : "vsb",
+        "enrolleePassword" : "pwd",
+        "enrolleeEmail" : "vsb@aomc.com"
+      }
+    ]
+  },
+  {
+    "subjectName": "history",
+    "subjectTypeName": "certificate",
+    "points": [
+      {
+        "enrolleeSubjectPoint": 11,
+        "enrolleeFirstName": "andrew",
+        "enrolleeLastName": "pavlyk",
+        "enrolleeLogin": "and",
+        "enrolleePassword": "somepwd",
+        "enrolleeEmail": "someenrolleeEmail@aomc.com"
+      },
+      {
+        "enrolleeSubjectPoint": 11,
+        "enrolleeFirstName": "vasyl",
+        "enrolleeLastName": "honcharenko",
+        "enrolleeLogin": "vsb",
+        "enrolleePassword": "pwd",
+        "enrolleeEmail": "vsb@aomc.com"
+      }
+    ]
+  },
+  {
+    "subjectName": "history",
+    "subjectTypeName": "exam",
+    "points" : [
+      {
+        "enrolleeSubjectPoint" : 200,
+        "enrolleeFirstName" : "andrew",
+        "enrolleeLastName" : "pavlyk",
+        "enrolleeLogin" : "and",
+        "enrolleePassword" : "somepwd",
+        "enrolleeEmail" : "someenrolleeEmail@aomc.com"
       }
     ]
   }

@@ -8,7 +8,7 @@ import org.bson.Document;
 
 import java.sql.SQLException;
 
-public class EnrolleeDaoNosqlImpl extends BasicDao<Enrollee> {
+public class EnrolleeDaoNoSqlImpl extends BasicDao<Enrollee> {
     @Override
     public String getCollectionName() {
         return "enrollee";

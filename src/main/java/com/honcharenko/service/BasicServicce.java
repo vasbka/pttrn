@@ -94,4 +94,9 @@ public class BasicServicce<E> implements Service<E> {
         }
         return object;
     }
+
+    @Override
+    public void Migrate(List<E> list) {
+
+    }
 }

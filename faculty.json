@@ -1,57 +1,85 @@
 [
   {
-    "name" : "Computer science",
+    "facultyName" : "Computer science",
     "facultyBudgetCount" : 100,
     "facultyGeneralCount" : 200,
-    "points" : [
+    "subjects": [
       {
-        "point" : 186,
-        "enrollee" : [
-          {
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          },
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          }
-        ]
+        "subjectName": "math",
+        "coefficient": 0.5,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName": "math",
+        "coefficient": 0.3,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName": "english",
+        "coefficient": 0.1,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName": "english",
+        "coefficient": 0.1,
+        "subjectTypeName": "certificate"
+      }
+    ],
+    "requests" : [
+      {
+        "enrolleeSubjectPoint": 186,
+        "enrolleeLastName": "honcharenko",
+        "enrolleeLogin": "vsb",
+        "enrolleePassword": "pwd",
+        "enrolleeEmail": "vsb@aomc.com"
+      },
+      {
+        "enrolleeSubjectPoint": 186,
+        "enrolleeFirstName" : "andrew",
+        "enrolleeLastName" : "pavlyk",
+        "enrolleeLogin" : "and",
+        "enrolleePassword" : "somepwd",
+        "enrolleeEmail" : "someenrolleeEmail@aomc.com"
       }
     ]
   },
   {
-    "name" : "Programming engineering",
+    "facultyName" : "Programming engineering",
     "facultyBudgetCount" : 5,
     "facultyGeneralCount" : 15,
-    "points" : [
+    "subjects": [
       {
-        "point" : 190,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "andrew",
-            "enrolleeLastName" : "pavlyk",
-            "enrolleeLogin" : "and",
-            "enrolleePassword" : "somepwd",
-            "enrolleeEmail" : "someenrolleeEmail@aomc.com"
-          }
-        ]
+        "subjectName": "math",
+        "coefficient": 0.2,
+        "subjectTypeName": "certificate"
       },
       {
-        "point" : 191,
-        "enrollee" : [
-          {
-            "enrolleeFirstName" : "vasyl",
-            "enrolleeLastName" : "honcharenko",
-            "enrolleeLogin" : "vsb",
-            "enrolleePassword" : "pwd",
-            "enrolleeEmail" : "vsb@aomc.com"
-          }
-        ]
+        "subjectName": "english",
+        "coefficient": 0.1,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName": "english",
+        "coefficient": 0.5,
+        "subjectTypeName": "certificate"
+      }
+    ],
+    "requests" : [
+      {
+        "enrolleeSubjectPoint" : 190,
+        "enrolleeFirstName" : "andrew",
+        "enrolleeLastName" : "pavlyk",
+        "enrolleeLogin" : "and",
+        "enrolleePassword" : "somepwd",
+        "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+      },
+      {
+        "enrolleeSubjectPoint" : 191,
+        "enrolleeFirstName" : "vasyl",
+        "enrolleeLastName" : "honcharenko",
+        "enrolleeLogin" : "vsb",
+        "enrolleePassword" : "pwd",
+        "enrolleeEmail" : "vsb@aomc.com"
       }
     ]
   }

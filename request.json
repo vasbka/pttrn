@@ -1,0 +1,54 @@
+[
+  {
+    "point": 190,
+    "faculty": {
+      "facultyName" : "Programming engineering"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "point": 186,
+    "faculty": {
+      "facultyName" : "Computer science"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "point": 186,
+    "faculty": {
+      "facultyName" : "Computer science"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  },
+  {
+    "point": 191,
+    "faculty": {
+      "facultyName" : "Programming engineering"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  }
+]

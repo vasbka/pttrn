@@ -1,6 +1,7 @@
 package com.honcharenko.builder.entity;
 
 import com.honcharenko.entity.Subject;
+import com.honcharenko.entity.SubjectType;
 
 public class SubjectBuilder {
     private Subject subject;
@@ -21,6 +22,11 @@ public class SubjectBuilder {
 
     public SubjectBuilder setFullName(String fullName) {
         subject.setFullName(fullName);
+        return this;
+    }
+
+    public SubjectBuilder setSubjectType(SubjectType subjectType) {
+        subject.setSubjectType(subjectType);
         return this;
     }
 

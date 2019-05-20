@@ -36,6 +36,28 @@ public class NoSqlServer {
                 .importFile(new File("./enrollee.json").getAbsolutePath())
                 .build();
 
+        IMongoImportConfig mongodConfigRequest = new MongoImportConfigBuilder()
+                .version(Version.Main.PRODUCTION)
+                .net(new Net(bindIp, port, Network.localhostIsIPv6()))
+                .db("test")
+                .collection("request")
+                .upsert(true)
+                .dropCollection(true)
+                .jsonArray(true)
+                .importFile(new File("./request.json").getAbsolutePath())
+                .build();
+
+        IMongoImportConfig mongodConfigPoint = new MongoImportConfigBuilder()
+                .version(Version.Main.PRODUCTION)
+                .net(new Net(bindIp, port, Network.localhostIsIPv6()))
+                .db("test")
+                .collection("point")
+                .upsert(true)
+                .dropCollection(true)
+                .jsonArray(true)
+                .importFile(new File("./point.json").getAbsolutePath())
+                .build();
+
         IMongoImportConfig mongodConfigSubject = new MongoImportConfigBuilder()
                 .version(Version.Main.PRODUCTION)
                 .net(new Net(bindIp, port, Network.localhostIsIPv6()))
@@ -78,6 +100,10 @@ public class NoSqlServer {
         mongodExecutable = defaultInstance.prepare(mongodConfigFaculty);
         mongodExecutable.start();
         mongodExecutable = defaultInstance.prepare(mongodConfigStatement);
+        mongodExecutable.start();
+        mongodExecutable = defaultInstance.prepare(mongodConfigPoint);
+        mongodExecutable.start();
+        mongodExecutable = defaultInstance.prepare(mongodConfigRequest);
 
         mongodExecutable.start();
         Thread.sleep(50000000);

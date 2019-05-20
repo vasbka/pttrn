@@ -1,0 +1,170 @@
+[
+  {
+    "enrolleeSubjectPoint": 12,
+    "subject": {
+      "subjectName" : "english",
+      "subjectTypeName": "certificate"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 10,
+    "subject": {
+      "subjectName" : "physic",
+      "subjectTypeName": "certificate"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 11,
+    "subject": {
+      "subjectName" : "history",
+      "subjectTypeName": "certificate"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 199,
+    "subject": {
+      "subjectName" : "math",
+      "subjectTypeName": "exam"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 200,
+    "subject": {
+      "subjectName" : "history",
+      "subjectTypeName": "exam"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 195,
+    "subject": {
+      "subjectName" : "physic",
+      "subjectTypeName": "exam"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "andrew",
+      "enrolleeLastName" : "pavlyk",
+      "enrolleeLogin" : "and",
+      "enrolleePassword" : "somepwd",
+      "enrolleeEmail" : "someenrolleeEmail@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 11,
+    "subject": {
+      "subjectName" : "math",
+      "subjectTypeName": "certificate"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 8,
+    "subject": {
+      "subjectName" : "physic",
+      "subjectTypeName": "certificate"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 8,
+    "subject": {
+      "subjectName" : "history",
+      "subjectTypeName": "certificate"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 176,
+    "subject": {
+      "subjectName" : "math",
+      "subjectTypeName": "exam"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 141,
+    "subject": {
+      "subjectName" : "english",
+      "subjectTypeName": "exam"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  },
+  {
+    "enrolleeSubjectPoint": 165,
+    "subject": {
+      "subjectName" : "physic",
+      "subjectTypeName": "exam"
+    },
+    "enrollee": {
+      "enrolleeFirstName" : "vasyl",
+      "enrolleeLastName" : "honcharenko",
+      "enrolleeLogin" : "vsb",
+      "enrolleePassword" : "pwd",
+      "enrolleeEmail" : "vsb@aomc.com"
+    }
+  }
+]

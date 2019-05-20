@@ -5,44 +5,46 @@
     "enrolleeLogin" : "and",
     "enrolleePassword" : "somepwd",
     "enrolleeEmail" : "someenrolleeEmail@aomc.com",
-    "points" : {
-      "certificate" : [
-        {
-          "name" : "english",
-          "point" : 12
-        },
-        {
-          "name" : "physic",
-          "point" : 10
-        },
-        {
-          "name" : "history",
-          "point" : 11
-        }
-      ],
-      "exam" : [
-        {
-          "name" : "math",
-          "point" : 199
-        },
-        {
-          "name" : "history",
-          "point" : 200
-        },
-        {
-          "name" : "physic",
-          "point" : 195
-        }
-      ]
-    },
+    "points" : [
+      {
+        "subjectName" : "english",
+        "enrolleeSubjectPoint" : 12,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName" : "physic",
+        "enrolleeSubjectPoint" : 10,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName" : "history",
+        "enrolleeSubjectPoint" : 11,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName" : "math",
+        "enrolleeSubjectPoint" : 199,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName" : "history",
+        "enrolleeSubjectPoint" : 200,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName" : "physic",
+        "enrolleeSubjectPoint" : 195,
+        "subjectTypeName": "exam"
+      }
+    ],
     "requests" : [
       {
         "facultyName" : "Computer science",
-        "point" : 186
+        "enrolleeSubjectPoint" : 186
       },
       {
         "facultyName" : "Programming engineering",
-        "point" : 190
+        "enrolleeSubjectPoint" : 190
       }
     ]
   },
@@ -52,44 +54,46 @@
     "enrolleeLogin" : "vsb",
     "enrolleePassword" : "pwd",
     "enrolleeEmail" : "vsb@aomc.com",
-    "points" : {
-      "certificate" : [
-        {
-          "name" : "math",
-          "point" : 11
-        },
-        {
-          "name" : "physic",
-          "point" : 8
-        },
-        {
-          "name" : "history",
-          "point" : 8
-        }
-      ],
-      "exam" : [
-        {
-          "name" : "math",
-          "point" : 176
-        },
-        {
-          "name" : "english",
-          "point" : 141
-        },
-        {
-          "name" : "physic",
-          "point" : 165
-        }
-      ]
-    },
-    "requests" : [
+    "points" : [
+      {
+        "subjectName" : "math",
+        "enrolleeSubjectPoint" : 11,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName" : "physic",
+        "enrolleeSubjectPoint" : 8,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName" : "history",
+        "enrolleeSubjectPoint" : 8,
+        "subjectTypeName": "certificate"
+      },
+      {
+        "subjectName" : "math",
+        "enrolleeSubjectPoint" : 176,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName" : "english",
+        "enrolleeSubjectPoint" : 141,
+        "subjectTypeName": "exam"
+      },
+      {
+        "subjectName" : "physic",
+        "enrolleeSubjectPoint" : 165,
+        "subjectTypeName": "exam"
+      }
+    ],
+    "requests": [
       {
         "facultyName" : "Computer science",
-        "point" : 186
+        "enrolleeSubjectPoint" : 186
       },
       {
         "facultyName" : "Programming engineering",
-        "point" : 191
+        "enrolleeSubjectPoint" : 191
       }
     ]
   }

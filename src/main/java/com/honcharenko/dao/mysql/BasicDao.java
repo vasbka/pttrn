@@ -1,6 +1,7 @@
 package com.honcharenko.dao.mysql;
 
 import com.honcharenko.dao.DAO;
+import com.honcharenko.dao.mysql.query.QueryBuilder;
 import com.honcharenko.entity.EntityId;
 import com.honcharenko.entity.Property;
 import com.honcharenko.observer.impl.DaoPublisher;

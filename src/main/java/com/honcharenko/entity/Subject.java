@@ -4,6 +4,7 @@ public class Subject implements EntityId{
     private String id;
     private String shortName;
     private String fullName;
+    private SubjectType subjectType;
 
     public String getId() {
         return id;
@@ -27,6 +28,14 @@ public class Subject implements EntityId{
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public SubjectType getSubjectType() {
+        return subjectType;
+    }
+
+    public void setSubjectType(SubjectType subjectType) {
+        this.subjectType = subjectType;
     }
 
     @Override

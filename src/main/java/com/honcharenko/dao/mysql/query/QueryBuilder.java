@@ -1,4 +1,4 @@
-package com.honcharenko.dao.mysql;
+package com.honcharenko.dao.mysql.query;
 
 
 public class QueryBuilder {

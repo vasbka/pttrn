@@ -17,4 +17,6 @@ public interface Service<E> {
 
     E update(E e);
 
+    void Migrate(List<E> list);
+
 }

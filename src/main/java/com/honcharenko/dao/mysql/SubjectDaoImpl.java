@@ -1,7 +1,15 @@
 package com.honcharenko.dao.mysql;
 
+import com.honcharenko.builder.entity.SubjectBuilder;
+import com.honcharenko.dao.DAO;
+import com.honcharenko.entity.Enrollee;
 import com.honcharenko.entity.Property;
 import com.honcharenko.entity.Subject;
+import com.honcharenko.entity.SubjectType;
+import com.honcharenko.util.DaoManager;
+import com.honcharenko.util.DaoType;
+import com.honcharenko.util.Fields;
+import com.honcharenko.util.Queries;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,63 +23,40 @@ public class SubjectDaoImpl extends BasicDao<Subject> {
         super(TABLE_NAME);
     }
 
-    public List<Subject> getAll() {
-        return null;
-    }
-
-    @Override
-    public List<Subject> getByProperty(List<Property> properties) throws SQLException {
-        return null;
-    }
-
-    public Subject getByProperty(String propertyName, String propertyValue) {
-        return null;
-    }
-
-    public Subject add(Subject subject) {
-        return subject;
-    }
-
-    public boolean remove(Subject subject) {
-        return false;
-    }
-
-    public Subject removeById(int id) {
-        return null;
-    }
-
-    public Subject update(Subject subject) {
-        return null;
-    }
-
-    @Override
-    public Subject getById(String id) {
-        return null;
-    }
 
     @Override
     Subject extractEntityFromResultSet(ResultSet resultSet) throws SQLException {
-        return null;
+        SubjectBuilder subjectBuilder = new SubjectBuilder();
+        DAO subjectDaoImpl = new DaoManager(DaoType.MYSQL).getFactory().getDaoByEntityType(SubjectType.class);
+        Object byId = subjectDaoImpl.getById(resultSet.getString(Fields.SUBJECT_SUBJECT_TYPE_ID));
+        Subject build = subjectBuilder
+                .setId(resultSet.getString(Fields.SUBJECT_ID))
+                .setFullName(resultSet.getString(Fields.SUBJECT_NAME))
+                .setSubjectType((SubjectType) byId)
+                .build();
+        return build;
     }
 
     @Override
     String prepareEntityValuesToInsert(Subject subject) {
-        return null;
+        return Queries.SUBJECT_INSERT;
     }
 
     @Override
     int preparedPropertiesValue(PreparedStatement preparedStatement, Subject subject) throws SQLException {
-        return 0;
+        int count = 1;
+        preparedStatement.setString(count++, subject.getFullName());
+        preparedStatement.setString(count++, subject.getSubjectType().getId());
+        return count;
     }
 
     @Override
     String getIdColumnName() {
-        return null;
+        return Fields.SUBJECT_ID;
     }
 
     @Override
     String getSetUpdateValues() {
-        return null;
+        return Queries.SUBJECT_UPDATE;
     }
-
 }

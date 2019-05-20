@@ -4,6 +4,7 @@ import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.observer.Subscriber;
 import com.honcharenko.observer.impl.DaoSubsciber;
+import com.honcharenko.servlet.nosql.PointNosqlHandler;
 import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import io.undertow.Handlers;
@@ -19,7 +20,9 @@ public class Server {
         RoutingHandler add = Handlers
                 .routing()
                 .addAll(new EnrolleeHandler(DaoType.NOSQL).getHandler())
-                .addAll(new FacultyHandler(DaoType.MYSQL).getHandler());
+                .addAll(new FacultyHandler(DaoType.NOSQL).getHandler())
+                .addAll(new PointNosqlHandler(DaoType.NOSQL).getHandler())
+                .addAll(new SubjectHandler(DaoType.NOSQL).getHandler());
         Undertow.builder()
                 .addHttpListener(27019, "localhost")
                 .setHandler(add)

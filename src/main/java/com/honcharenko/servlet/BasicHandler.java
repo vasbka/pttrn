@@ -3,6 +3,7 @@ package com.honcharenko.servlet;
 import com.google.gson.Gson;
 import com.honcharenko.entity.Property;
 import com.honcharenko.service.Service;
+import com.honcharenko.util.DaoType;
 import io.undertow.Handlers;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BasicHandler<E> {
-
+    protected DaoType daoType;
     protected Service<E> service;
 
     private static final String ADD = "add";
