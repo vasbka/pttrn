@@ -1,4 +1,4 @@
-package com.honcharenko.servlet;
+package com.honcharenko.server.http;
 
 import com.honcharenko.builder.entity.PointBuilder;
 import com.honcharenko.entity.Point;

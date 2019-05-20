@@ -1,4 +1,4 @@
-package com.honcharenko.servlet;
+package com.honcharenko.server.http;
 
 import com.google.gson.Gson;
 import com.honcharenko.entity.Property;

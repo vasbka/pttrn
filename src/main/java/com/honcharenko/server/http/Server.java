@@ -1,10 +1,10 @@
-package com.honcharenko.servlet;
+package com.honcharenko.server.http;
 
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.observer.Subscriber;
 import com.honcharenko.observer.impl.DaoSubsciber;
-import com.honcharenko.servlet.nosql.PointNosqlHandler;
+import com.honcharenko.server.http.nosql.PointNosqlHandler;
 import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import io.undertow.Handlers;

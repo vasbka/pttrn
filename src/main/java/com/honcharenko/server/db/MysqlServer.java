@@ -1,4 +1,4 @@
-package com.honcharenko.mysql;
+package com.honcharenko.server.db;
 
 import com.wix.mysql.EmbeddedMysql;
 import com.wix.mysql.config.MysqldConfig;

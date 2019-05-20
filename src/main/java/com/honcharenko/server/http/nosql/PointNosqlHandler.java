@@ -1,13 +1,12 @@
-package com.honcharenko.servlet.nosql;
+package com.honcharenko.server.http.nosql;
 
 import com.honcharenko.builder.entity.EnrolleeBuilder;
 import com.honcharenko.builder.entity.PointBuilder;
 import com.honcharenko.builder.entity.SubjectBuilder;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.entity.Point;
-import com.honcharenko.entity.Subject;
 import com.honcharenko.entity.SubjectType;
-import com.honcharenko.servlet.PointHandler;
+import com.honcharenko.server.http.PointHandler;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
 import io.undertow.server.HttpServerExchange;

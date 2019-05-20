@@ -1,4 +1,4 @@
-package com.honcharenko.mysql;
+package com.honcharenko.server.db;
 
 import de.flapdoodle.embed.mongo.*;
 import de.flapdoodle.embed.mongo.config.*;
