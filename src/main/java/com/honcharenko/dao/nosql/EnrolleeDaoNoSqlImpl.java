@@ -15,7 +15,7 @@ public class EnrolleeDaoNoSqlImpl extends BasicDao<Enrollee> {
     }
 
     @Override
-    Enrollee prepareDocumentsToentityList(Document entity) {
+    Enrollee prepareDocumentToEntity(Document entity) {
         return new EnrolleeBuilder()
                 .setId(entity.get("_id").toString())
                 .setFirstName(entity.get(Fields.ENROLLEE_FIRST_NAME).toString())

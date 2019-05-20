@@ -36,7 +36,7 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
                 .getCollection(getCollectionName()).find();
         List<E> entes = new ArrayList<>();
         for (Document entity : entities) {
-            entes.add(prepareDocumentsToentityList(entity));
+            entes.add(prepareDocumentToEntity(entity));
         }
         return entes;
     }
@@ -53,7 +53,7 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
                 .getCollection(getCollectionName()).find(basicDBObject);
         List<E> ents = new ArrayList<>();
         for (Document entity : entities) {
-            ents.add(prepareDocumentsToentityList(entity));
+            ents.add(prepareDocumentToEntity(entity));
         }
         return ents;
     }
@@ -97,7 +97,7 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
         Document documentEntity = ConnectionManager.getInstance()
                 .getNoSqlDataBase()
                 .getCollection(getCollectionName()).find(filter).first();
-        return prepareDocumentsToentityList(documentEntity);
+        return prepareDocumentToEntity(documentEntity);
     }
 
     @Override
@@ -107,7 +107,7 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
 
     public abstract String getCollectionName();
 
-    abstract E prepareDocumentsToentityList(Document entites);
+    abstract E prepareDocumentToEntity(Document entites);
 
     abstract Document transofmrEntityToDocument(E e);
 

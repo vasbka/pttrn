@@ -12,7 +12,7 @@ public class SubjectTypeDaoNoSqlImpl extends BasicDao<SubjectType> {
     }
 
     @Override
-    SubjectType prepareDocumentsToentityList(Document entites) {
+    SubjectType prepareDocumentToEntity(Document entites) {
         return new SubjectType(
                 entites.get("name").toString(),
                 entites.get("id").toString());

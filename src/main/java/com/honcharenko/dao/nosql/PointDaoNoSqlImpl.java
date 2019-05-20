@@ -17,7 +17,7 @@ public class PointDaoNoSqlImpl extends BasicDao<Point> {
     }
 
     @Override
-    Point prepareDocumentsToentityList(Document entites) {
+    Point prepareDocumentToEntity(Document entites) {
         PointBuilder pointBuilder = new PointBuilder();
         EnrolleeBuilder enrolleeBuilder = new EnrolleeBuilder();
         SubjectBuilder subjectBuilder = new SubjectBuilder();
@@ -62,6 +62,19 @@ public class PointDaoNoSqlImpl extends BasicDao<Point> {
 
     @Override
     BasicDBObject prepareEntityToUpdate(Point point) {
+        BasicDBObject basicDBO = new BasicDBObject();
+        basicDBO.put(Fields.POINT_POINT, point.getPoint());
+        Document value = new Document();
+        value.put(Fields.SUBJECT_NAME, point.getSubject().getFullName());
+        value.put(Fields.SUBJECT_TYPE_NAME, point.getSubject().getSubjectType().getName());
+        basicDBO.put("subject", value);
+        Document enrolleeDoc = new Document();
+        enrolleeDoc.put(Fields.ENROLLEE_FIRST_NAME, point.getEnrollee().getFirstName());
+        enrolleeDoc.put(Fields.ENROLLEE_LAST_NAME, point.getEnrollee().getLastName());
+        enrolleeDoc.put(Fields.ENROLLEE_EMAIL, point.getEnrollee().getEmail());
+        enrolleeDoc.put(Fields.ENROLLEE_LOGIN, point.getEnrollee().getLogin());
+        enrolleeDoc.put(Fields.ENROLLEE_PASSWORD, point.getEnrollee().getPassword());
+        basicDBO.put("enrollee", enrolleeDoc);
         return null;
     }
 }

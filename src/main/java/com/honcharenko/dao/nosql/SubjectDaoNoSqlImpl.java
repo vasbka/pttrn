@@ -16,9 +16,7 @@ public class SubjectDaoNoSqlImpl extends BasicDao<Subject> {
     }
 
     @Override
-    Subject prepareDocumentsToentityList(Document entites) {
-
-        SubjectTypeDaoImpl subjectTypeDao = new SubjectTypeDaoImpl();
+    Subject prepareDocumentToEntity(Document entites) {
         Subject subject = new Subject();
         entites.forEach((key, value) -> {
             if (key.equals("_id")) {
