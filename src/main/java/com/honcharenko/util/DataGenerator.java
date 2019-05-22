@@ -11,10 +11,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import java.io.File;
 import java.sql.SQLException;
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class DataGenerator {
 

@@ -1,6 +1,8 @@
 package com.honcharenko.service;
 
+import com.honcharenko.entity.EntityId;
 import com.honcharenko.entity.Property;
+import com.honcharenko.util.DaoType;
 
 import java.util.List;
 
@@ -17,6 +19,6 @@ public interface Service<E> {
 
     E update(E e);
 
-    void Migrate(List<E> list);
+    void migrate(DaoType daoTypeToMigrate);
 
 }

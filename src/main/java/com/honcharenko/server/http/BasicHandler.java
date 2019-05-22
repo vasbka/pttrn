@@ -3,6 +3,7 @@ package com.honcharenko.server.http;
 import com.google.gson.Gson;
 import com.honcharenko.entity.Property;
 import com.honcharenko.service.Service;
+import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import io.undertow.Handlers;
 import io.undertow.server.HttpServerExchange;
@@ -26,7 +27,7 @@ public abstract class BasicHandler<E> {
 
     public RoutingHandler getHandler() {
         return Handlers.routing()
-                    .get("/" + servletName + "/{" + idParamName + "}", httpServerExchange -> {
+                    .get("/" + daoType + "/" + servletName + "/{" + idParamName + "}", httpServerExchange -> {
                         String id = httpServerExchange.getQueryParameters().get(idParamName).getFirst();
                         if (id == null) {
                             httpServerExchange.setStatusCode(400);
@@ -41,28 +42,29 @@ public abstract class BasicHandler<E> {
                         }
                         send(httpServerExchange, gson.toJson(object));
                     })
-                .get("/" + servletName, httpServerExchange -> {
+                .get("/" + daoType + "/" + servletName, httpServerExchange -> {
                     List<E> all = service.getAll();
                     send(httpServerExchange, gson.toJson(all));
                 })
-                .put("/" + servletName + "/" + ADD, httpServerExchange -> {
+                .get("/" + daoType + "/" + servletName + "/migrate", httpServerExchange -> this.service.migrate(DaoManager.getDaoToMigrate(daoType)))
+                .put("/" + daoType + "/" + servletName + "/" + ADD, httpServerExchange -> {
                     E e = extractParam(httpServerExchange);
                     E add = service.add(e);
                     send(httpServerExchange, gson.toJson(add));
                 })
-                .post("/" + servletName + "/" + DELETE + "/{" +idParamName + "}", httpServerExchange -> {
+                .post("/" + daoType + "/" + servletName + "/" + DELETE + "/{" +idParamName + "}", httpServerExchange -> {
                     String enrolleeId = httpServerExchange.getQueryParameters().get(idParamName).getFirst();
                     E removed = service.removeById(enrolleeId);
                     send(httpServerExchange, gson.toJson(removed));
                 })
-                .get("/" + servletName + "/" + BY_PARAMETERS, httpServerExchange -> {
+                .get("/" + daoType + "/" + servletName + "/" + BY_PARAMETERS, httpServerExchange -> {
                     List<Property> properties = new ArrayList<>();
                     httpServerExchange.getQueryParameters().forEach((key, value)
                             -> properties.add(new Property(key, value.getFirst())));
                     List<E> byProperty = service.getByProperty(properties);
                     send(httpServerExchange, gson.toJson(byProperty));
                 })
-                .post("/" + servletName + "/" + UPDATE, httpServerExchange -> {
+                .post("/" + daoType + "/" + servletName + "/" + UPDATE, httpServerExchange -> {
                     E object = extractParamForUpdate(httpServerExchange);
                     E update = service.update(object);
                     send(httpServerExchange, gson.toJson(update));

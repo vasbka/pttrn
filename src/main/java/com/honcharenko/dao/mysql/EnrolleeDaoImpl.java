@@ -33,6 +33,7 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
                     .setLastName(resultSet.getString(Fields.ENROLLEE_LAST_NAME))
                     .setEmail(resultSet.getString(Fields.ENROLLEE_EMAIL))
                     .setLogin(resultSet.getString(Fields.ENROLLEE_LOGIN))
+                    .setPassword(resultSet.getString(Fields.ENROLLEE_PASSWORD))
                 .build();
     }
 

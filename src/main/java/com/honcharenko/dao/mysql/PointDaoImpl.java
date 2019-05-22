@@ -2,9 +2,7 @@ package com.honcharenko.dao.mysql;
 
 import com.honcharenko.builder.entity.PointBuilder;
 import com.honcharenko.dao.DAO;
-import com.honcharenko.entity.Enrollee;
-import com.honcharenko.entity.Point;
-import com.honcharenko.entity.Subject;
+import com.honcharenko.entity.*;
 import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
@@ -13,6 +11,8 @@ import com.honcharenko.util.Queries;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PointDaoImpl extends BasicDao<Point> {
 
@@ -44,8 +44,30 @@ public class PointDaoImpl extends BasicDao<Point> {
     @Override
     int preparedPropertiesValue(PreparedStatement preparedStatement, Point point) throws SQLException {
         int count = 1;
-        preparedStatement.setString(count++, point.getEnrollee().getId());
-        preparedStatement.setString(count++, point.getSubject().getId());
+        String enrolleeId = point.getEnrollee().getId();
+        if (enrolleeId == null) {
+            List<Property> properties = new ArrayList<>();
+            properties.add(new Property(Fields.ENROLLEE_EMAIL, point.getEnrollee().getEmail()));
+            List<Enrollee> byProperty = new DaoManager(DaoType.MYSQL).getFactory().getDaoByEntityType(Enrollee.class).getByProperty(properties);
+            enrolleeId = byProperty.get(0).getId();
+        }
+
+        String subjectId = point.getSubject().getId();
+        if (subjectId == null) {
+            List<Property> properties = new ArrayList<>();
+            properties.add(new Property(Fields.SUBJECT_TYPE_NAME, point.getSubject().getSubjectType().getName()));
+            List<SubjectType> byProperty = new DaoManager(DaoType.MYSQL).getFactory().getDaoByEntityType(SubjectType.class).getByProperty(properties);
+            point.getSubject().getSubjectType().setId(byProperty.get(0).getId());
+
+            properties = new ArrayList<>();
+            properties.add(new Property(Fields.SUBJECT_NAME, point.getSubject().getFullName()));
+            properties.add(new Property(Fields.SUBJECT_SUBJECT_TYPE_ID, point.getSubject().getSubjectType().getId()));
+            List<Subject> byProperty1 = new DaoManager(DaoType.MYSQL).getFactory().getDaoByEntityType(Subject.class).getByProperty(properties);
+            subjectId = byProperty1.get(0).getId();
+        }
+
+        preparedStatement.setString(count++, enrolleeId);
+        preparedStatement.setString(count++, subjectId);
         preparedStatement.setDouble(count++, point.getPoint());
         return count;
     }
