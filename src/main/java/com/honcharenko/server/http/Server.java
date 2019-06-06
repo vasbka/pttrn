@@ -11,7 +11,7 @@ import io.undertow.Handlers;
 import io.undertow.Undertow;
 import io.undertow.server.RoutingHandler;
 
-public class Server {
+public class  Server {
     public static void main(String[] args) {
 
         Subscriber subscriber = new DaoSubsciber();
@@ -19,12 +19,16 @@ public class Server {
         daoByEntityType.getDaoPublish().addSubscriber(subscriber);
         RoutingHandler add = Handlers
                 .routing()
+                .addAll(new EnrolleeHandler(DaoType.MYSQL).getHandler())
+                .addAll(new FacultyHandler(DaoType.MYSQL).getHandler())
+                .addAll(new PointNosqlHandler(DaoType.MYSQL).getHandler())
+                .addAll(new SubjectHandler(DaoType.MYSQL).getHandler())
                 .addAll(new EnrolleeHandler(DaoType.NOSQL).getHandler())
                 .addAll(new FacultyHandler(DaoType.NOSQL).getHandler())
                 .addAll(new PointNosqlHandler(DaoType.NOSQL).getHandler())
                 .addAll(new SubjectHandler(DaoType.NOSQL).getHandler());
         Undertow.builder()
-                .addHttpListener(27019, "localhost")
+                .addHttpListener(27021, "localhost")
                 .setHandler(add)
                 .build()
                 .start();

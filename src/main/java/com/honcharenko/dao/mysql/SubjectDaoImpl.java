@@ -14,6 +14,7 @@ import com.honcharenko.util.Queries;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SubjectDaoImpl extends BasicDao<Subject> {
@@ -46,7 +47,14 @@ public class SubjectDaoImpl extends BasicDao<Subject> {
     int preparedPropertiesValue(PreparedStatement preparedStatement, Subject subject) throws SQLException {
         int count = 1;
         preparedStatement.setString(count++, subject.getFullName());
-        preparedStatement.setString(count++, subject.getSubjectType().getId());
+        String id = subject.getSubjectType().getId();
+        if (id == null || id.equals("0")) {
+            List<Property> properties = new ArrayList<>();
+            properties.add(new Property(Fields.SUBJECT_TYPE_NAME, subject.getSubjectType().getName()));
+            List<SubjectType> byProperty = new DaoManager(DaoType.MYSQL).getFactory().getDaoByEntityType(SubjectType.class).getByProperty(properties);
+            id = byProperty.get(0).getId();
+        }
+        preparedStatement.setString(count++, id);
         return count;
     }
 

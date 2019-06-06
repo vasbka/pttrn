@@ -3,19 +3,19 @@ package com.honcharenko.service;
 import com.honcharenko.dao.DAO;
 import com.honcharenko.entity.Property;
 import com.honcharenko.factory.AbstractDaoFactory;
-import com.honcharenko.service.Service;
 import com.honcharenko.util.DaoManager;
+import com.honcharenko.util.DaoType;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BasicServicce<E> implements Service<E> {
+public class BasicService<E> implements Service<E> {
     protected DaoManager daoManager;
     protected AbstractDaoFactory factory;
     protected Class<E> type;
 
-    public BasicServicce(Class<E> type) {
+    public BasicService(Class<E> type) {
         this.type = type;
     }
 
@@ -96,7 +96,16 @@ public class BasicServicce<E> implements Service<E> {
     }
 
     @Override
-    public void Migrate(List<E> list) {
-
+    public void migrate(DaoType daoTypeToMigrate) {
+        List<E> all = this.getAll();
+        DAO daoByEntityType = new DaoManager(daoTypeToMigrate).getFactory().getDaoByEntityType(type);
+        all.forEach(e -> {
+            try {
+                daoByEntityType.add(e);
+            } catch (Exception ex){
+                ex.printStackTrace();
+            }
+        });
     }
+
 }

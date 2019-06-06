@@ -22,6 +22,7 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
         this.idParamName = "enrolleeId";
         this.service = new EnrolleeService(daoType);
         this.enrolleeCaretaker = EnrolleeCaretaker.getInstance();
+        this.daoType = daoType;
     }
 
     protected Enrollee extractParamForUpdate(HttpServerExchange httpServerExchange) {
@@ -46,16 +47,27 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
     @Override
     public RoutingHandler getHandler() {
         RoutingHandler handler = super.getHandler();
-        handler.get("/" + servletName + "/createSnapshot/{" + idParamName + "}", httpServerExchange -> {
+        handler.get("/" + daoType + "/" + servletName + "/createSnapshot/{" + idParamName + "}", httpServerExchange -> {
             String first = httpServerExchange.getQueryParameters().get(idParamName).getFirst();
             EnrolleeSnapshot snapshot = service.getById(first).createSnapshot();
             send(httpServerExchange, String.valueOf(first));
         })
-        .get("/" + servletName + "/getAllSnapshots", httpServerExchange -> {
+        .get("/" + daoType + "/" + servletName + "/snapshots/getAllSnapshots", httpServerExchange -> {
             send(httpServerExchange, new Gson().toJson(enrolleeCaretaker));
         })
-        .get("/" + servletName + "/undo", httpServerExchange -> {
-            send(httpServerExchange, new Gson().toJson(enrolleeCaretaker.restore()));
+        .get("/" + daoType + "/" + servletName + "/snapshots/reset", httpServerExchange -> {
+            Enrollee restore = enrolleeCaretaker.restore();
+            service.update(restore);
+            send(httpServerExchange, new Gson().toJson(restore));
+        })
+        .get("/" + daoType + "/" + servletName + "/snapshots/current", httpServerExchange -> {
+            send(httpServerExchange, new Gson().toJson(enrolleeCaretaker.getCurrentSnap()));
+        })
+        .get("/" + daoType + "/" + servletName + "/snapshots/moveBack", httpServerExchange -> {
+            send(httpServerExchange, new Gson().toJson(enrolleeCaretaker.moveBack()));
+        })
+        .get("/" + daoType + "/" + servletName + "/snapshots/moveForward", httpServerExchange -> {
+            send(httpServerExchange, new Gson().toJson(enrolleeCaretaker.moveForward()));
         });
         return handler;
     }

@@ -20,4 +20,12 @@ public class DaoManager {
     public AbstractDaoFactory getFactory() {
         return factories.get(daoType);
     }
+
+    public static DaoType getDaoToMigrate(DaoType daoType) {
+        if (daoType == DaoType.MYSQL) {
+            return DaoType.NOSQL;
+        }
+        return DaoType.MYSQL;
+    }
+
 }

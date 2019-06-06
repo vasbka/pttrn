@@ -3,15 +3,17 @@ package com.honcharenko.memento;
 import com.honcharenko.entity.Enrollee;
 import com.honcharenko.memento.impl.EnrolleeSnapshot;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class EnrolleeCaretaker {
-    private LinkedList<EnrolleeSnapshot> snapshots;
+    private ArrayList<EnrolleeSnapshot> snapshots;
     private static EnrolleeCaretaker instance;
-
+    private int currentIndex = -1;
+    private EnrolleeSnapshot current;
 
     private EnrolleeCaretaker() {
-        snapshots = new LinkedList<>();
+        snapshots = new ArrayList<>();
     }
 
     public static EnrolleeCaretaker getInstance() {
@@ -22,15 +24,43 @@ public class EnrolleeCaretaker {
     }
 
     public void addSnapshot(EnrolleeSnapshot enrolleeSnapshot) {
-        snapshots.push(enrolleeSnapshot);
+        snapshots.add(enrolleeSnapshot);
+        currentIndex++;
+    }
+
+    public EnrolleeSnapshot getCurrentSnap() {
+        if (!snapshots.isEmpty()) {
+            current = snapshots.get(currentIndex);
+        }
+        return current;
+    }
+
+    public EnrolleeSnapshot moveBack() {
+        if (currentIndex == -1) {
+            return null;
+        }
+        current = snapshots.get(--currentIndex);
+        return current;
+    }
+
+    public EnrolleeSnapshot moveForward() {
+        if (snapshots.size() > currentIndex + 1) {
+            current = snapshots.get(++currentIndex);
+            return current;
+        }
+        return null;
     }
 
     public Enrollee restore() {
-        EnrolleeSnapshot enrolleeSnapshot;
-        if ((enrolleeSnapshot = snapshots.poll()) != null) {
-            return enrolleeSnapshot.restore();
+        EnrolleeSnapshot snapshotToRestore = null;
+        if (!snapshots.isEmpty()) {
+            snapshotToRestore = snapshots.get(currentIndex);
         }
-        return null;
+        if (snapshotToRestore == null) {
+            System.out.println("Current snapshot is null");
+            return null;
+        }
+        return snapshotToRestore.restore();
     }
 
 }

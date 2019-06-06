@@ -1,6 +1,7 @@
 package com.honcharenko.util;
 
 import com.mongodb.MongoClient;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoDatabase;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={MongoAutoConfiguration.class})
@@ -20,7 +22,10 @@ public class ConnectionManager {
 
     private ConnectionManager() {
         //nosql
-        mongoClient = new MongoClient("localhost", 27018);
+        mongoClient = new MongoClient(
+                Arrays.asList(new ServerAddress("localhost", 27018),
+                new ServerAddress("host2", 27019),
+                new ServerAddress("host3", 27020)));
         db = mongoClient.getDatabase("test");
 
         //mysql

@@ -16,6 +16,7 @@ public class FacultyHandler extends BasicHandler<Faculty>{
         this.servletName = "faculty";
         this.idParamName = "facultyId";
         this.service = new FacultyService(daoType);
+        this.daoType = daoType;
     }
 
     @Override
