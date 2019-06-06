@@ -3,27 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="460d4c2f-29c4-41fc-84e2-d8e003528783" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/EnrolleeDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/EnrolleeDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/PointDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/PointDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/SubjectDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/SubjectDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/memento/EnrolleeCaretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/memento/EnrolleeCaretaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/BasicHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/BasicHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/EnrolleeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/EnrolleeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/FacultyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/FacultyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/BasicServicce.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/EnrolleeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/EnrolleeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/FacultyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/FacultyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/PointService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/PointService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/SubjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/SubjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/SubjectTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/service/impl/SubjectTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/DaoManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/DaoManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/honcharenko/util/DataGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/init.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -110,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="34">
+              <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -143,6 +123,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>clearAll</find>
+      <find>print</find>
       <find>enrolleeSubject</find>
       <find>preparedStatement</find>
       <find>subject</find>
@@ -161,6 +143,7 @@
       <find>add</find>
       <find>mongodExecutable</find>
       <find>subjectSubjectTypeId</find>
+      <find>create</find>
       <find>EnrolleeCaretaker</find>
       <find>= last</find>
       <find>.update</find>
@@ -170,9 +153,6 @@
       <find>mysql</find>
       <find>instance</find>
       <find>getInstance() {</find>
-      <find>mongoclient</find>
-      <find>/user</find>
-      <find>create</find>
     </findStrings>
     <replaceStrings>
       <replace>public</replace>
@@ -194,6 +174,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/nosql/EnrolleeDaoNosqlImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/nosql/BasicDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/BasicDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/DAO.java" />
@@ -234,16 +216,14 @@
         <option value="$PROJECT_DIR$/emptySubject.json" />
         <option value="$PROJECT_DIR$/emptyPoint.json" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/FacultyHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/db/NoSqlServer.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db/init.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/BasicHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/Server.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/SubjectDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/dao/mysql/PointDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/memento/EnrolleeCaretaker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/EnrolleeHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/db/NoSqlServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/db/NoSqlReplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/Server.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -266,10 +246,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="943" />
-    <option name="height" value="1087" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -284,6 +265,11 @@
             <path>
               <item name="pttrn" type="b2602c69:ProjectViewProjectNode" />
               <item name="pttrn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pttrn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pttrn" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pttrn" type="b2602c69:ProjectViewProjectNode" />
@@ -368,7 +354,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559860809974" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559861044291" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -410,12 +396,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NoSqlReplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.honcharenko.server.db.NoSqlReplication" />
+    <configuration name="MysqlServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.honcharenko.mysql.MysqlServer" />
       <module name="pttrn" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.honcharenko.server.db.*" />
+          <option name="PATTERN" value="com.honcharenko.mysql.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -465,10 +451,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.NoSqlReplication" />
         <item itemvalue="Application.NoSqlServer (1)" />
         <item itemvalue="Application.MysqlServer (1)" />
         <item itemvalue="Application.NoSqlServer" />
+        <item itemvalue="Application.MysqlServer" />
       </list>
     </recent_temporary>
   </component>
@@ -498,9 +484,6 @@
     <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="DB Browser" />
-      <window_info id="Project Explorer" />
-      <window_info id="Job Explorer" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.5716648" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
@@ -508,16 +491,14 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="DB Execution Console" />
-      <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.529595" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.46121594" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.4810401" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.46153846" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.54932505" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.032502707" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.3943662" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.43661973" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32827735" />
@@ -639,6 +620,12 @@
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/BasicHandler.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/PointHandler.java</url>
           <line>25</line>
           <properties />
@@ -729,12 +716,6 @@
           <line>35</line>
           <properties />
           <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/BasicHandler.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="136" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1050,6 +1031,20 @@ resultSet.getInt(1);</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/util/Fields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/undertow/undertow-core/2.0.1.Final/undertow-core-2.0.1.Final.jar!/io/undertow/server/Connectors.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="357" selection-start-line="357" selection-end-line="357" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/service/BasicService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -1138,6 +1133,16 @@ resultSet.getInt(1);</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/db/NoSqlServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="20" column="25" selection-start-line="18" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/nosql.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1169,6 +1174,18 @@ resultSet.getInt(1);</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/memento/EnrolleeCaretaker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1187,49 +1204,10 @@ resultSet.getInt(1);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/util/ConnectionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1463#1464#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/db/NoSqlServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="20" column="25" selection-start-line="18" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/db/NoSqlReplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/server/http/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="36" selection-start-column="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/undertow/undertow-core/2.0.1.Final/undertow-core-2.0.1.Final.jar!/io/undertow/server/Connectors.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="357" selection-start-line="357" selection-end-line="357" />
         </state>
       </provider>
     </entry>
@@ -1243,10 +1221,10 @@ resultSet.getInt(1);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/honcharenko/util/Fields.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="68" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="68" />
+        <state relative-caret-position="-1615">
+          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1259,8 +1237,8 @@ resultSet.getInt(1);</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="34">
+          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
