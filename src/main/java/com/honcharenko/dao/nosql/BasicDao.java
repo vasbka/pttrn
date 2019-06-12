@@ -6,10 +6,13 @@ import com.honcharenko.entity.Property;
 import com.honcharenko.observer.impl.DaoPublisher;
 import com.honcharenko.util.ConnectionManager;
 import com.mongodb.BasicDBObject;
+import com.mongodb.WriteConcern;
 import com.mongodb.client.FindIterable;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.UpdateResult;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.springframework.util.StringUtils;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -61,11 +64,33 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
     @Override
     public E add(E e) throws SQLException {
         Document document = transofmrEntityToDocument(e);
-        ConnectionManager.getInstance()
+        MongoCollection<Document> collection = ConnectionManager.getInstance()
                 .getNoSqlDataBase()
-                .getCollection(getCollectionName())
-                .insertOne(document);
+                .getCollection(getCollectionName());
+        int count = 5_000;
+        for (int i = 0; i < count; i++) {
+            document.remove("_id");
+            System.out.println(i);
+            int a = 0;
+            while(document.get("_id") == null && a < 3) {
+                try {
+                    collection.insertOne(document);
+                    try{
+                        Thread.sleep(1);
+                    } catch (InterruptedException e1x) {}
+                } catch (RuntimeException exc) {
+                    try {
+                        System.out.println("sleep");
+                        Thread.sleep(3000);
+                    } catch (InterruptedException ex) {
+                    } finally {
+                        a++;
+                    }
+                }
+            }
+        }
         e.setId(document.get(ID_PROPERTY_NAME).toString());
+        System.out.println(count + " = " + collection.count());
         return e;
     }
 

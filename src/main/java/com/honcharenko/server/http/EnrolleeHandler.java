@@ -11,7 +11,9 @@ import com.honcharenko.util.Fields;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
 
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.List;
 import java.util.Map;
 
 public class EnrolleeHandler extends BasicHandler<Enrollee> {
@@ -68,6 +70,17 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
         })
         .get("/" + daoType + "/" + servletName + "/snapshots/moveForward", httpServerExchange -> {
             send(httpServerExchange, new Gson().toJson(enrolleeCaretaker.moveForward()));
+        })
+        .get("/" + daoType + "/testReplic", httpServerExchange -> {
+            Enrollee enrollee = new Enrollee();
+            enrollee.setLogin("login");
+            enrollee.setPassword("pwd");
+            enrollee.setLastName("lastname");
+            enrollee.setFirstName("first");
+            enrollee.setEmail("emnail@emial.com");
+            long start = System.currentTimeMillis();
+
+            service.add(enrollee);
         });
         return handler;
     }

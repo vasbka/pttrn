@@ -1,6 +1,7 @@
 package com.honcharenko.util;
 
 import com.mongodb.MongoClient;
+import com.mongodb.MongoClientOptions;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoDatabase;
 import org.apache.commons.dbcp.BasicDataSource;
@@ -21,11 +22,11 @@ public class ConnectionManager {
     private final MongoDatabase db;
 
     private ConnectionManager() {
-        //nosql
+        //replica
         mongoClient = new MongoClient(
                 Arrays.asList(new ServerAddress("localhost", 27018),
-                new ServerAddress("host2", 27019),
-                new ServerAddress("host3", 27020)));
+                new ServerAddress("localhost", 27019),
+                new ServerAddress("localhost", 27020)));
         db = mongoClient.getDatabase("test");
 
         //mysql
