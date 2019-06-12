@@ -24,9 +24,7 @@ public class ConnectionManager {
     private ConnectionManager() {
         //replica
         mongoClient = new MongoClient(
-                Arrays.asList(new ServerAddress("localhost", 27018),
-                new ServerAddress("localhost", 27019),
-                new ServerAddress("localhost", 27020)));
+                Arrays.asList(new ServerAddress("localhost", 27018)));
         db = mongoClient.getDatabase("test");
 
         //mysql

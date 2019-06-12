@@ -3,10 +3,12 @@ package com.honcharenko.dao.mysql;
 import com.honcharenko.entity.SubjectType;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
+import org.bson.Document;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class SubjectTypeDaoImpl extends BasicDao<SubjectType> {
     private static final String TABLE_NAME = "subjectType";
@@ -42,5 +44,10 @@ public class SubjectTypeDaoImpl extends BasicDao<SubjectType> {
     @Override
     String getSetUpdateValues() {
         return Queries.SUBJECT_TYPE_UPDATE;
+    }
+
+    @Override
+    public List<SubjectType> getByAggregation(List<Document> aggregations) {
+        return null;
     }
 }

@@ -4,10 +4,12 @@ import com.honcharenko.builder.entity.FacultyBuilder;
 import com.honcharenko.entity.Faculty;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
+import org.bson.Document;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class FacultyDaoImpl extends BasicDao<Faculty> {
     private static final String TABLE_NAME = "faculty";
@@ -50,4 +52,8 @@ public class FacultyDaoImpl extends BasicDao<Faculty> {
         return Queries.FACULTY_UPDATE;
     }
 
+    @Override
+    public List<Faculty> getByAggregation(List<Document> aggregations) {
+        return null;
+    }
 }

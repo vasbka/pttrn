@@ -5,6 +5,7 @@ import com.honcharenko.entity.Property;
 import com.honcharenko.factory.AbstractDaoFactory;
 import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
+import org.bson.Document;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -106,6 +107,12 @@ public class BasicService<E> implements Service<E> {
                 ex.printStackTrace();
             }
         });
+    }
+
+    public List<E> getByAggregations(List<Document> aggregations) {
+        AbstractDaoFactory factory = daoManager.getFactory();
+        DAO<E> dao = factory.getDaoByEntityType(type);
+        return dao.getByAggregation(aggregations);
     }
 
 }

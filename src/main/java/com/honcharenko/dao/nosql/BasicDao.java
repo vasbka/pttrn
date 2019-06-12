@@ -7,6 +7,7 @@ import com.honcharenko.observer.impl.DaoPublisher;
 import com.honcharenko.util.ConnectionManager;
 import com.mongodb.BasicDBObject;
 import com.mongodb.WriteConcern;
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.UpdateResult;
@@ -14,8 +15,10 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.util.StringUtils;
 
+import javax.sql.rowset.CachedRowSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
@@ -59,6 +62,23 @@ public abstract class BasicDao<E extends EntityId> implements NoSqlDao<E> {
             ents.add(prepareDocumentToEntity(entity));
         }
         return ents;
+    }
+
+    public List<E> getByAggregation(List<Document> aggregations) {
+        MongoCollection<Document> collection = ConnectionManager.getInstance()
+                .getNoSqlDataBase()
+                .getCollection(getCollectionName());
+        List<E> entes = new ArrayList<>();
+        AggregateIterable<Document> aggregate = null;
+        try {
+            aggregate = collection.aggregate(aggregations);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        }
+        for (Document entity : aggregate) {
+            entes.add(prepareDocumentToEntity(entity));
+        }
+        return entes;
     }
 
     @Override

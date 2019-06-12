@@ -3,6 +3,7 @@ package com.honcharenko.dao;
 import com.honcharenko.entity.Property;
 import com.honcharenko.observer.impl.DaoPublisher;
 import com.mysql.cj.xdevapi.SqlDataResult;
+import org.bson.Document;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -23,4 +24,6 @@ public interface DAO<E> {
     DaoPublisher getDaoPublish();
 
     void clearAll() throws SQLException;
+
+    List<E> getByAggregation(List<Document> aggregations);
 }

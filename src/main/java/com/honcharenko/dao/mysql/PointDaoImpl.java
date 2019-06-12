@@ -7,6 +7,7 @@ import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
+import org.bson.Document;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -80,5 +81,10 @@ public class PointDaoImpl extends BasicDao<Point> {
     @Override
     String getSetUpdateValues() {
         return Queries.POINT_UPDATE;
+    }
+
+    @Override
+    public List<Point> getByAggregation(List<Document> aggregations) {
+        return null;
     }
 }

@@ -6,15 +6,14 @@ import com.honcharenko.entity.Enrollee;
 import com.honcharenko.memento.EnrolleeCaretaker;
 import com.honcharenko.memento.impl.EnrolleeSnapshot;
 import com.honcharenko.service.impl.EnrolleeService;
+import com.honcharenko.service.impl.SubjectPopularityService;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.server.RoutingHandler;
+import org.bson.Document;
 
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class EnrolleeHandler extends BasicHandler<Enrollee> {
     private EnrolleeCaretaker enrolleeCaretaker;
@@ -81,6 +80,17 @@ public class EnrolleeHandler extends BasicHandler<Enrollee> {
             long start = System.currentTimeMillis();
 
             service.add(enrollee);
+        })
+        .get("/" + daoType + "/aggregation", httpServerExchange -> {
+            List<Document> documents = Arrays.asList(
+                    new Document("$unwind", "$points"),
+                    new Document("$project",
+                            new Document("points.subjectName", 1)
+                                .append("enrolleeEmail", 1)
+                                .append("count", new Document("$add", 1))),
+                    new Document("$group", new Document("_id", new Document("points", "$points").append("email", "$enrolleeEmail")).append("cnt", new Document("$sum", "$count")))
+            );
+            send(httpServerExchange, new Gson().toJson(new SubjectPopularityService().getByAggregations(documents)));
         });
         return handler;
     }

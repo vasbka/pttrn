@@ -10,6 +10,7 @@ import com.honcharenko.util.DaoManager;
 import com.honcharenko.util.DaoType;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
+import org.bson.Document;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -66,5 +67,10 @@ public class SubjectDaoImpl extends BasicDao<Subject> {
     @Override
     String getSetUpdateValues() {
         return Queries.SUBJECT_UPDATE;
+    }
+
+    @Override
+    public List<Subject> getByAggregation(List<Document> aggregations) {
+        return null;
     }
 }

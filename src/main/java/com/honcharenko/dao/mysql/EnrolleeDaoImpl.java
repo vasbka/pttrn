@@ -6,10 +6,12 @@ import com.honcharenko.memento.EnrolleeCaretaker;
 import com.honcharenko.util.ConnectionManager;
 import com.honcharenko.util.Fields;
 import com.honcharenko.util.Queries;
+import org.bson.Document;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
 
@@ -23,6 +25,11 @@ public class EnrolleeDaoImpl extends BasicDao<Enrollee> {
         Enrollee update = super.update(enrollee);
         EnrolleeCaretaker.getInstance().addSnapshot(update.createSnapshot());
         return update;
+    }
+
+    @Override
+    public List<Enrollee> getByAggregation(List<Document> aggregations) {
+        return null;
     }
 
     @Override
